@@ -1,0 +1,2164 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Der Kirschblütenbrief</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#FFF4F0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,96,600,100,1;1,96,500,100,1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+:root{
+  /* Layout: one storybook column (max 30rem) over a blush-to-peach sky; the letters hang on a sakura branch that blooms as she goes. */
+  --sky-top:#FFF4F0;
+  --sky-mid:#FDE3E8;
+  --sky-low:#FFE0CF;
+  --paper:#FFFCF8;
+  --card:#FFFFFF;
+  --blush:#FDE6EA;
+  --peach:#FFD6C2;
+  --peach-deep:#F4A27F;
+  --sakura:#F39BB6;
+  --rose:#C8476E;
+  --rose-deep:#A3375A;
+  --ink:#57293A;
+  --ink-soft:#86566A;
+  --line:#F2CBD5;
+  --bark:#8E5B57;
+  --gold:#E2AE4E;
+  --ok:#2F7D5B; --ok-bg:#E2F3E9;
+  --bad:#B93B5A; --bad-bg:#FDE5EA;
+  --font-display:"Fraunces","Iowan Old Style",Georgia,serif;
+  --font-body:"Nunito","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --font-hand:"Caveat","Bradley Hand","Segoe Print",cursive;
+  --r-lg:24px; --r-md:16px;
+  --shadow:0 14px 34px -20px rgba(160,60,95,.55),0 0 0 1px rgba(236,180,198,.55);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font-body);font-size:16px;line-height:1.55;color:var(--ink);background:var(--sky-top);-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:#FFF4F0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sakura);outline-offset:2px;border-radius:12px}
+.sky{position:fixed;inset:0;z-index:-2;background:radial-gradient(120% 55% at 90% -5%,#FFE3D3 0%,rgba(255,227,211,0) 60%),radial-gradient(90% 50% at 0% 100%,#FFD9C9 0%,rgba(255,217,201,0) 70%),linear-gradient(180deg,var(--sky-top) 0%,var(--sky-mid) 55%,var(--sky-low) 100%)}
+#petals{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- HUD ---------- */
+.hud{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:8px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:rgba(255,244,240,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(242,203,213,.7)}
+.brand{display:flex;align-items:center;gap:8px;border:0;background:none;padding:4px 6px 4px 0;cursor:pointer;min-width:0}
+.brand svg{width:26px;height:26px;flex:none}
+.brand span{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.05rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hud-chips{margin-left:auto;display:flex;align-items:center;gap:6px;flex:none}
+.chip-hud{display:inline-flex;align-items:center;gap:5px;height:36px;padding:0 10px;border-radius:999px;background:var(--card);box-shadow:var(--shadow);font-weight:800;font-size:.9rem;font-variant-numeric:tabular-nums;border:0;cursor:pointer}
+.chip-hud svg{width:18px;height:18px}
+span.chip-hud{cursor:default}
+.icon-btn{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;border:0;background:var(--card);box-shadow:var(--shadow);cursor:pointer;flex:none}
+.icon-btn svg{width:19px;height:19px}
+.ico{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:370px){.brand span{display:none}.chip-hud{padding:0 8px}}
+
+/* ---------- Layout ---------- */
+.app{max-width:30rem;margin:0 auto;padding-block:18px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.screen{animation:fadeUp .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes fadeUp{from{opacity:.001;transform:translateY(10px)}to{opacity:1;transform:none}}
+.eyebrow{margin:0;font-size:.74rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--rose)}
+.h1{margin:4px 0 6px;font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,7vw,2.15rem);line-height:1.12;text-wrap:balance;letter-spacing:-.01em}
+.h1 em{font-style:italic;font-weight:500;color:var(--rose)}
+.sub{margin:0;color:var(--ink-soft)}
+.card{background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.actions.center{justify-content:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 24px;border-radius:999px;border:0;background:var(--rose);color:#fff;font-weight:800;font-size:1.02rem;cursor:pointer;box-shadow:0 5px 0 var(--rose-deep),0 12px 22px -12px rgba(163,55,90,.8);transition:transform .12s,box-shadow .12s}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 var(--rose-deep)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.btn.soft{background:var(--card);color:var(--ink);box-shadow:0 4px 0 var(--line),0 0 0 2px var(--line) inset}
+.btn.soft:active{box-shadow:0 1px 0 var(--line),0 0 0 2px var(--line) inset}
+.btn.wide{flex:1 1 180px}
+.btn svg{width:18px;height:18px}
+.link{border:0;background:none;padding:6px 2px;color:var(--rose);font-weight:800;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+/* ---------- Title ---------- */
+.title-screen{position:relative;text-align:center;padding-top:4px}
+.hero-branch{display:block;width:calc(100% + 32px);margin:0 -16px -6px;max-width:none;height:auto}
+.cloud{position:absolute;top:2px;right:-4px;width:84px;height:48px;border:0;background:none;padding:0;cursor:pointer;animation:float 6s ease-in-out infinite}
+.cloud svg{width:100%;height:100%}
+@keyframes float{50%{transform:translateY(-5px)}}
+.for{margin:2px 0 0;font-family:var(--font-hand);font-size:1.6rem;color:var(--rose);line-height:1}
+.title{margin:2px 0 8px;font-family:var(--font-display);font-weight:600;font-size:clamp(2.4rem,12vw,3.5rem);line-height:.98;letter-spacing:-.02em;text-wrap:balance}
+.title small{display:block;font-size:.42em;font-style:italic;font-weight:500;color:var(--rose);letter-spacing:0;margin-bottom:4px}
+.title .soft-i{font-style:italic;font-weight:500}
+.lede{max-width:24rem;margin:0 auto;font-size:1.05rem;text-wrap:balance}
+.lede-en{max-width:24rem;margin:6px auto 0;color:var(--ink-soft);font-size:.92rem;text-wrap:balance}
+.countdown{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:7px 14px;border-radius:999px;background:var(--card);box-shadow:var(--shadow);font-weight:800;font-size:.88rem;font-variant-numeric:tabular-nums}
+.countdown b{color:var(--rose)}
+.env-static{width:min(220px,62vw);margin:22px auto 4px;filter:drop-shadow(0 14px 18px rgba(200,71,110,.22))}
+.env-static svg{width:100%;height:auto;display:block}
+.title-screen .actions{justify-content:center}
+.foot{margin:22px 0 0;font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--ink-soft)}
+
+/* ---------- Map ---------- */
+.map-head{margin-bottom:6px}
+.progress{height:10px;border-radius:999px;background:rgba(255,255,255,.75);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden;margin-top:12px}
+.progress span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--sakura),var(--peach-deep));transition:width .6s}
+.tree{position:relative;padding-top:78px;margin-top:8px}
+.tree-svg{position:absolute;left:0;top:0;width:100%;overflow:visible;pointer-events:none}
+.branch-main{fill:none;stroke:var(--bark);stroke-width:7;stroke-linecap:round}
+.branch-hi{fill:none;stroke:#B98580;stroke-width:2;stroke-linecap:round;opacity:.6}
+.twig{fill:none;stroke:var(--bark);stroke-width:3.5;stroke-linecap:round}
+.cat{position:absolute;top:4px;left:4px;width:64px;height:58px;border:0;background:none;padding:0;cursor:pointer;z-index:2}
+.cat svg{width:100%;height:100%;overflow:visible}
+.cat .tail{transform-origin:46px 44px;animation:tail 3.2s ease-in-out infinite}
+@keyframes tail{50%{transform:rotate(14deg)}}
+.rows{list-style:none;margin:0;padding:0;display:grid;gap:12px;position:relative}
+.row-btn{display:grid;grid-template-columns:68px minmax(0,1fr);align-items:center;gap:10px;width:100%;border:0;background:none;padding:0;text-align:left;cursor:pointer}
+.node{position:relative;width:68px;height:68px;display:grid;place-items:center}
+.node svg{width:58px;height:58px;overflow:visible}
+.row.current .node::before{content:"";position:absolute;inset:4px;border-radius:50%;background:radial-gradient(circle,rgba(243,155,182,.55),rgba(243,155,182,0) 70%);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.18);opacity:.6}}
+.row.done .node svg{animation:none}
+.row-card{display:block;padding:12px 14px;border-radius:var(--r-md);background:var(--card);box-shadow:var(--shadow);min-width:0;transition:transform .15s}
+.row-btn:hover .row-card{transform:translateX(2px)}
+.row.current .row-card{box-shadow:0 0 0 2px var(--rose),0 16px 30px -18px rgba(200,71,110,.7)}
+.row.locked .row-card{background:rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(236,180,198,.6)}
+.row.locked .row-title,.row.locked .row-meta{color:var(--ink-soft)}
+.row-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.row-eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.skill{font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.skill-hoeren{background:#FFE2D3;color:#9A4A2C}
+.skill-lesen{background:#FDE0E8;color:#9E3557}
+.skill-schreiben{background:#F7E1F0;color:#83386E}
+.skill-sprechen{background:#FFEBCB;color:#8A5A12}
+.skill-finale{background:var(--rose);color:#fff}
+.row-title{display:block;margin-top:2px;font-family:var(--font-display);font-weight:600;font-size:1.12rem;line-height:1.25}
+.row-meta{display:flex;align-items:center;gap:6px;margin-top:4px;font-size:.86rem;font-weight:700;color:var(--ink-soft)}
+.row.current .row-meta{color:var(--rose)}
+.stars-sm{display:inline-flex;gap:2px}
+.stars-sm svg{width:16px;height:16px}
+.st-on{fill:var(--gold)}
+.st-off{fill:#EBD5DA}
+.row-meta svg.ico{width:15px;height:15px}
+
+/* ---------- Stage chrome ---------- */
+.stage-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.stage-top .meta{display:flex;flex-direction:column;min-width:0}
+.stage-top .meta b{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--rose)}
+.stage-top .meta span{font-size:.9rem;color:var(--ink-soft);font-weight:700}
+.qdots{display:flex;gap:6px;margin:0 0 14px}
+.qdots i{flex:1;height:6px;border-radius:999px;background:rgba(255,255,255,.8);box-shadow:inset 0 0 0 1px var(--line)}
+.qdots i.on{background:var(--sakura);box-shadow:none}
+.qdots i.now{background:var(--peach-deep);box-shadow:none}
+.qcard{padding:18px 16px 18px}
+.prompt{margin:16px 0 0;font-family:var(--font-display);font-weight:600;font-size:1.22rem;line-height:1.3;text-wrap:balance}
+.prompt-sub{margin:4px 0 0;font-size:.9rem;color:var(--ink-soft)}
+.sentence{margin:12px 0 0;padding:12px 14px;border-radius:14px;background:var(--blush);font-weight:700;font-size:1.08rem}
+.blank{display:inline-block;min-width:4.2em;border-bottom:2.5px dashed var(--rose);color:var(--rose);text-align:center}
+.ctx + .prompt{margin-top:18px}
+
+/* options */
+.opts{display:grid;gap:10px;margin-top:16px}
+.opts.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.opts.tf{grid-template-columns:1fr 1fr}
+.opt{display:flex;align-items:center;gap:12px;width:100%;min-height:54px;padding:12px 14px;border:2px solid var(--line);border-radius:var(--r-md);background:var(--card);font-weight:700;font-size:1rem;line-height:1.35;text-align:left;cursor:pointer;transition:transform .15s,border-color .15s,background .15s}
+.opt:hover:not([disabled]){border-color:var(--sakura);transform:translateY(-1px)}
+.opt[disabled]{cursor:default}
+.opt .badge{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--blush);color:var(--rose-deep);font-weight:800;font-size:.85rem}
+.opts.tf .opt{justify-content:center;font-size:1.05rem;font-weight:800}
+.opt.is-right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.is-right .badge{background:var(--ok);color:#fff}
+.opt.is-wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt.is-wrong .badge{background:var(--bad);color:#fff}
+.opt.dim{opacity:.55}
+.opt.clock-opt{flex-direction:column;justify-content:center;gap:6px;padding:10px 6px;text-align:center}
+.clock{width:100%;max-width:76px;height:auto}
+.clock-face{fill:#FFF8F5;stroke:var(--ink);stroke-width:3}
+.clock-ticks line{stroke:var(--ink);stroke-width:2;stroke-linecap:round}
+.clock-h{stroke:var(--ink);stroke-width:4;stroke-linecap:round}
+.clock-m{stroke:var(--rose);stroke-width:3;stroke-linecap:round}
+.clock-pin{fill:var(--ink)}
+.clock-lbl{font-variant-numeric:tabular-nums;font-weight:800}
+.opt.web-opt{flex-direction:column;align-items:stretch;gap:8px;padding:10px}
+.web-opt .web-row{display:flex;align-items:center;gap:8px}
+.web{display:block;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;font-weight:600}
+.web-bar{display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--blush);font-size:.78rem;color:var(--ink-soft);font-weight:800;min-width:0}
+.web-bar .url{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.web-body{padding:8px 12px 10px;font-size:.92rem;line-height:1.45}
+.web-body b{display:block;font-family:var(--font-display);font-weight:600;font-size:1.05rem}
+.dots{display:inline-flex;gap:4px;flex:none}
+.dots i{width:8px;height:8px;border-radius:50%;background:#F5B5C6}
+.dots i:nth-child(2){background:#FBCDB5}
+.dots i:nth-child(3){background:#F3D9A7}
+.train{width:100%;border-collapse:collapse;font-size:.92rem;font-variant-numeric:tabular-nums;background:#fff;border-radius:10px;overflow:hidden}
+.train th{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);text-align:left;padding:6px 8px;background:var(--blush)}
+.train td{padding:6px 8px;border-top:1px solid var(--line)}
+.train td:first-child{font-weight:800;color:var(--rose)}
+
+/* contexts */
+.ctx{margin:0}
+.mail{border-radius:14px;overflow:hidden;border:1.5px solid var(--line);background:#fff}
+.mail-bar{display:flex;gap:8px;align-items:center;padding:8px 12px;background:var(--blush);font-size:.84rem;color:var(--ink-soft);font-weight:800}
+.mail-body{padding:12px 14px;font-size:.98rem;line-height:1.62}
+.mail-body p{margin:0 0 8px}
+.mail-body p:last-child{margin:0}
+.menu{position:relative;background:#FFF8F1;border:2px dashed #EFB39C;border-radius:18px;padding:16px 14px;text-align:center}
+.menu h3{margin:0 0 6px;font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.35rem;color:var(--rose-deep)}
+.menu p{margin:2px 0;font-weight:700}
+.menu p.small{font-size:.85rem;color:var(--ink-soft);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.sign{margin:0 auto;max-width:310px}
+.sign figcaption{text-align:center;font-size:.85rem;color:var(--ink-soft);font-weight:700;margin-bottom:8px}
+.sign figcaption b{font-style:italic;color:var(--ink)}
+.board{transform:rotate(var(--tilt,0deg));background:#fff;border:3px solid var(--ink);border-radius:8px;box-shadow:7px 7px 0 rgba(87,41,58,.13);padding:14px 12px;text-align:center}
+.board h3{margin:0 0 6px;font-family:var(--font-display);font-weight:600;font-size:1.3rem}
+.board p{margin:2px 0;font-weight:700;font-variant-numeric:tabular-nums}
+.examcard{max-width:290px;margin:0 auto;border:2px solid var(--ink);border-radius:12px;overflow:hidden;background:#fff}
+.ec-head{display:flex;font-size:.7rem;font-weight:800}
+.ec-head span{flex:1;padding:5px 8px}
+.ec-head span:first-child{background:var(--ink);color:#fff}
+.ec-head span:last-child{background:var(--peach);text-align:right}
+.ec-theme{background:var(--blush);text-align:center;font-weight:800;font-size:.86rem;padding:5px}
+.ec-word{font-family:var(--font-display);font-weight:600;font-size:2.15rem;text-align:center;padding:24px 10px;line-height:1.1;overflow-wrap:anywhere}
+.ec-pic{display:grid;place-items:center;padding:16px}
+.ec-pic svg{width:120px;height:120px}
+.pl{fill:none;stroke:var(--ink);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.pf{fill:#FBD3DD}
+.pf2{fill:#FFE1CF}
+.pw{fill:#D8E9F5}
+.task{border-radius:16px;background:#FFF6F8;border:1.5px solid var(--line);padding:14px}
+.task p{margin:0 0 8px}
+.task p:last-child{margin:0}
+.task ul{margin:6px 0 8px;padding-left:1.2em}
+.en{color:var(--ink-soft);font-size:.9rem;font-style:italic}
+.toggle-en{margin-top:6px}
+
+/* listening */
+.listen{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:14px;border-radius:18px;background:linear-gradient(135deg,#FFF0EA,#FDE6EE)}
+.play{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:10px 20px 10px 14px;border-radius:999px;border:0;background:var(--rose);color:#fff;font-weight:800;cursor:pointer;box-shadow:0 4px 0 var(--rose-deep)}
+.play:active{transform:translateY(2px);box-shadow:0 2px 0 var(--rose-deep)}
+.play .disc{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center}
+.play svg{width:18px;height:18px}
+.bars{display:none;align-items:flex-end;gap:2px;height:16px}
+.bars i{width:3px;background:#fff;border-radius:2px;animation:bar .8s ease-in-out infinite}
+.bars i:nth-child(2){animation-delay:.15s}.bars i:nth-child(3){animation-delay:.3s}.bars i:nth-child(4){animation-delay:.45s}
+@keyframes bar{0%,100%{height:4px}50%{height:16px}}
+.play.playing .bars{display:inline-flex}
+.play.playing .disc{display:none}
+.listen-meta{font-size:.84rem;font-weight:700;color:var(--ink-soft);line-height:1.35}
+.listen-meta b{color:var(--ink)}
+.listen .link{font-size:.86rem;padding:2px 0}
+.transcript{margin-top:10px;width:100%;padding:12px 14px;border-radius:14px;background:#fff;border:1.5px dashed var(--line);font-size:.95rem}
+.transcript p{margin:0 0 6px}
+.transcript p:last-child{margin:0}
+.transcript .who{font-weight:800;color:var(--rose);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-right:6px}
+.voice-note{width:100%;font-size:.82rem;color:var(--ink-soft);margin:0}
+
+/* feedback */
+.feedback{margin-top:16px;padding:14px 16px 16px;border-radius:18px;animation:fadeUp .35s}
+.feedback.ok{background:var(--ok-bg);box-shadow:inset 0 0 0 2px rgba(47,125,91,.35)}
+.feedback.bad{background:var(--bad-bg);box-shadow:inset 0 0 0 2px rgba(185,59,90,.3)}
+.fb-title{margin:0;font-size:1.15rem}
+.feedback.ok .fb-title strong{color:var(--ok)}
+.feedback.bad .fb-title strong{color:var(--bad)}
+.fb-title span{font-size:.88rem;color:var(--ink-soft);font-weight:700;margin-left:4px}
+.fb-explain{margin:6px 0 0}
+.feedback .btn{margin-top:14px;width:100%}
+
+/* input / form / write */
+.field-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px;font-weight:800;font-size:1.1rem}
+.txt{font:inherit;font-size:1.05rem;font-weight:700;color:var(--ink);padding:11px 14px;border:2px solid var(--line);border-radius:14px;background:#FFF9FA;min-width:0;width:100%}
+.txt:focus{outline:none;border-color:var(--sakura);box-shadow:0 0 0 4px rgba(243,155,182,.25)}
+.field-row .txt{flex:1 1 160px;width:auto}
+.err{margin:8px 0 0;color:var(--bad);font-weight:700;font-size:.9rem}
+.form-sheet{border:2px solid var(--ink);border-radius:14px;padding:14px;background:#fff;margin-top:14px}
+.form-sheet h3{margin:0 0 2px;text-align:center;font-family:var(--font-display);font-weight:600;font-size:1.3rem;color:var(--rose-deep)}
+.form-sheet .fs-sub{margin:0 0 12px;text-align:center;font-weight:800;font-size:.85rem;color:var(--ink-soft)}
+.frow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 8px;align-items:center;padding:8px 0;border-top:1px dashed var(--line)}
+.frow label,.frow .lbl{grid-column:1/-1;font-size:.84rem;font-weight:800;color:var(--ink-soft)}
+.frow .given{padding:9px 12px;border-radius:10px;background:#F3E6E9;font-weight:700}
+.frow .num{font-weight:800;color:var(--rose);font-size:.9rem;font-variant-numeric:tabular-nums}
+.frow .inline{display:flex;gap:8px;min-width:0}
+.frow .inline .given{flex:none}
+.frow .txt.ok{border-color:var(--ok);background:var(--ok-bg)}
+.frow .txt.bad{border-color:var(--bad);background:var(--bad-bg)}
+.sol{grid-column:1/-1;font-size:.86rem;font-weight:700;margin:2px 0 0}
+.sol.ok{color:var(--ok)}
+.sol.bad{color:var(--bad)}
+.radios{display:flex;gap:8px;flex-wrap:wrap}
+.radios label{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:2px solid var(--line);font-weight:800;color:var(--ink);font-size:.95rem;cursor:pointer;grid-column:auto}
+.radios input{accent-color:var(--rose);width:18px;height:18px;margin:0}
+.radios label.ok{border-color:var(--ok);background:var(--ok-bg)}
+.radios label.bad{border-color:var(--bad);background:var(--bad-bg)}
+textarea.txt{min-height:190px;resize:vertical;line-height:1.55;font-weight:600}
+.wc{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:.88rem;font-weight:800;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.checks{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.checks span{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:#F6EAED;font-size:.82rem;font-weight:800;color:var(--ink-soft)}
+.checks span svg{width:14px;height:14px}
+.checks span.on{background:var(--ok-bg);color:var(--ok)}
+.scoring{margin-top:12px;padding:12px 14px;border-radius:14px;background:#FFF6EC;font-size:.9rem}
+.scoring h4{margin:0 0 4px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--rose)}
+.scoring p{margin:0}
+
+/* letters */
+.letter{position:relative;padding:26px 20px 22px;border-radius:6px 6px 14px 14px;background-color:#FFFDF8;background-image:repeating-linear-gradient(180deg,rgba(0,0,0,0) 0 33px,#F6DCE2 33px 34px);background-position:0 18px;box-shadow:0 18px 34px -22px rgba(150,60,90,.6),0 0 0 1px #F3DADF}
+.letter::before{content:"";position:absolute;top:-10px;left:50%;width:96px;height:24px;transform:translateX(-50%) rotate(-3deg);background:rgba(243,155,182,.55);border-radius:3px}
+.hand{font-family:var(--font-hand);font-size:1.5rem;line-height:34px;font-weight:500;color:#5E2C40}
+.hand p{margin:0}
+.hand p + p{margin-top:0}
+.sig{font-family:var(--font-hand);font-size:1.7rem;font-weight:700;color:var(--rose);margin-top:4px}
+.letter .en{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);line-height:1.55;font-size:.92rem}
+.letter-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-weight:800;font-size:.8rem;cursor:pointer;color:var(--ink)}
+.chip svg{width:16px;height:16px;flex:none}
+.chip[aria-pressed="true"]{background:var(--blush);border-color:var(--sakura)}
+.pressed{position:absolute;right:10px;bottom:8px;width:46px;height:46px;opacity:.85;transform:rotate(18deg)}
+details.tip{margin-top:16px;border-radius:16px;background:rgba(255,255,255,.75);box-shadow:0 0 0 1.5px var(--line)}
+details.tip summary{cursor:pointer;padding:12px 14px;font-weight:800;font-size:.92rem;list-style:none;display:flex;align-items:center;gap:8px}
+details.tip summary::-webkit-details-marker{display:none}
+details.tip summary::after{content:"+";margin-left:auto;font-size:1.2rem;color:var(--rose)}
+details.tip[open] summary::after{content:"–"}
+details.tip p{margin:0;padding:0 14px 14px;font-size:.94rem}
+.tip-ico{width:24px;height:24px;border-radius:50%;background:var(--peach);display:grid;place-items:center;flex:none}
+.tip-ico svg{width:14px;height:14px}
+
+/* envelope */
+.intro{text-align:center;padding-top:6px}
+.env{position:relative;display:block;width:min(300px,80vw);aspect-ratio:10/7;margin:28px auto 10px;padding:0;border:0;background:none;cursor:pointer;perspective:900px}
+.env-back{position:absolute;inset:0;border-radius:12px;background:#F6B49C}
+.env-paper{position:absolute;left:7%;right:7%;top:8%;bottom:7%;border-radius:8px;background:#FFFDF8;background-image:repeating-linear-gradient(180deg,rgba(0,0,0,0) 0 15px,#F6DCE2 15px 16px);z-index:2;transition:transform .8s .35s cubic-bezier(.2,.8,.2,1);box-shadow:0 2px 6px rgba(150,60,90,.15)}
+.env-front{position:absolute;inset:0;border-radius:12px;z-index:3;background:linear-gradient(160deg,#FFD9C6,#FBC2AE);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%)}
+.env-flap{position:absolute;left:0;right:0;top:0;height:62%;z-index:4;background:linear-gradient(180deg,#FBC7B2,#F7B39C);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:50% 0;transition:transform .6s ease,z-index 0s .3s;border-radius:12px 12px 0 0}
+.env-seal{position:absolute;left:50%;top:60%;width:62px;height:62px;transform:translate(-50%,-50%);z-index:5;transition:transform .35s,opacity .35s;filter:drop-shadow(0 3px 4px rgba(120,30,60,.35))}
+.env-seal svg{width:100%;height:100%}
+.env:not(.open) .env-seal{animation:seal 2.4s ease-in-out infinite}
+@keyframes seal{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.07)}}
+.env.open .env-flap{transform:rotateX(180deg);z-index:1}
+.env.open .env-seal{opacity:0;transform:translate(-50%,-50%) scale(.5)}
+.env.open .env-paper{transform:translateY(-42%)}
+.hint{margin:6px 0 0;font-weight:800;color:var(--rose);font-size:.92rem}
+.hint span{display:block;color:var(--ink-soft);font-weight:700;font-size:.84rem}
+
+/* reward */
+.reward{text-align:center}
+.bloom{width:120px;height:120px;margin:4px auto 0;animation:bloom 1s cubic-bezier(.2,1.4,.4,1) both}
+.bloom svg{width:100%;height:100%;overflow:visible}
+@keyframes bloom{from{transform:scale(.2) rotate(-120deg);opacity:0}to{transform:none;opacity:1}}
+.stars{display:flex;justify-content:center;gap:8px;margin:6px 0 4px}
+.stars svg{width:38px;height:38px;animation:pop .5s cubic-bezier(.2,1.6,.4,1) both}
+.stars svg:nth-child(2){animation-delay:.15s}.stars svg:nth-child(3){animation-delay:.3s}
+@keyframes pop{from{transform:scale(0)}to{transform:none}}
+.score{margin:0;font-weight:800;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.reward .letter{text-align:left;margin-top:22px}
+.clue{margin-top:18px;padding:18px 16px;border-radius:20px;background:linear-gradient(150deg,#FFFFFF,#FFF1F4);box-shadow:var(--shadow);text-align:left;animation:turn .8s .25s cubic-bezier(.2,.8,.2,1) both;position:relative;overflow:hidden}
+@keyframes turn{from{transform:perspective(700px) rotateY(80deg);opacity:0}to{transform:none;opacity:1}}
+.clue .eyebrow{display:flex;align-items:center;gap:6px}
+.clue .eyebrow svg{width:16px;height:16px}
+.clue-de{margin:8px 0 2px;font-family:var(--font-display);font-weight:600;font-size:1.3rem;line-height:1.3;text-wrap:balance}
+.clue .en{margin:0}
+.clue .corner{position:absolute;right:-14px;top:-14px;width:70px;height:70px;opacity:.5}
+.petal-letter{display:flex;align-items:center;gap:14px;margin-top:12px;padding:14px 16px;border-radius:20px;background:#FFF7EE;box-shadow:inset 0 0 0 1.5px #F7D3B9;text-align:left;animation:fadeUp .5s .6s both}
+.petal-letter .pl-big{position:relative;width:62px;height:66px;flex:none}
+.petal-letter .pl-big svg{width:100%;height:100%}
+.petal-letter .pl-big b{position:absolute;inset:0;display:grid;place-items:center;padding-top:8px;font-family:var(--font-display);font-size:1.6rem;color:var(--rose-deep)}
+.petal-letter p{margin:0;font-weight:700}
+.petal-letter p span{display:block;font-weight:600;color:var(--ink-soft);font-size:.88rem}
+.encourage{margin:18px 0 0;font-family:var(--font-hand);font-size:1.6rem;color:var(--rose);line-height:1.15}
+.encourage span{display:block;font-family:var(--font-body);font-size:.85rem;color:var(--ink-soft)}
+.break{margin-top:18px;padding:16px;border-radius:20px;background:#fff;box-shadow:0 0 0 2px var(--peach),var(--shadow);text-align:left}
+.break h3{margin:0;font-family:var(--font-display);font-weight:600;font-size:1.2rem}
+.break p{margin:6px 0 0;font-size:.95rem}
+.break .actions{margin-top:12px}
+
+/* finale */
+.fin-clues{margin-top:16px;border-radius:18px;background:rgba(255,255,255,.8);box-shadow:0 0 0 1.5px var(--line)}
+.fin-clues summary{cursor:pointer;padding:12px 14px;font-weight:800}
+.fin-clues ol{margin:0;padding:0 14px 14px 2.2em;display:grid;gap:8px}
+.fin-clues li{font-weight:700}
+.fin-clues li span{display:block;font-weight:600;font-style:italic;color:var(--ink-soft);font-size:.88rem}
+.slots{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:22px 0 6px}
+.slot{width:48px;height:56px;border-radius:14px;border:2.5px dashed var(--sakura);background:rgba(255,255,255,.75);display:grid;place-items:center;font-family:var(--font-display);font-weight:600;font-size:1.7rem;color:var(--rose-deep);cursor:pointer;padding:0}
+.slot.filled{border-style:solid;background:#fff}
+.slots.shake{animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.slots.win .slot{border-color:var(--ok);background:var(--ok-bg);color:var(--ok)}
+.pletters{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:14px}
+.pbtn{position:relative;width:58px;height:62px;border:0;background:none;padding:0;cursor:pointer;transition:transform .2s,opacity .2s}
+.pbtn svg{width:100%;height:100%}
+.pbtn b{position:absolute;inset:0;display:grid;place-items:center;padding-top:6px;font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--rose-deep)}
+.pbtn:hover:not([disabled]){transform:translateY(-3px) rotate(-4deg)}
+.pbtn[disabled]{opacity:.25;cursor:default}
+.fin-msg{min-height:1.6em;margin:12px 0 0;text-align:center;font-weight:800}
+.fin-msg.bad{color:var(--bad)}
+.reveal{text-align:center}
+.reveal-name{margin:4px 0 0;font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,10vw,2.8rem);line-height:1.05}
+.reveal-name span{display:block;font-style:italic;font-weight:500;color:var(--rose)}
+.reveal .letter{text-align:left;margin-top:24px}
+.reveal .hand p{margin-bottom:34px}
+.reveal .hand p:last-child{margin-bottom:0}
+.bonus{margin-top:22px;padding:18px 16px;border-radius:22px;background:linear-gradient(150deg,#FFF3EC,#FDE6EE);text-align:left}
+.bonus .bonus-de{margin:8px 0 2px;font-family:var(--font-display);font-weight:600;font-size:1.35rem;line-height:1.25}
+.bonus p{margin:0}
+.bonus .note{margin-top:10px;font-size:.95rem}
+.bonus .chip{margin-top:10px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:18px}
+.stat{padding:12px 6px;border-radius:16px;background:#fff;box-shadow:var(--shadow)}
+.stat b{display:block;font-family:var(--font-display);font-size:1.5rem;font-weight:600;font-variant-numeric:tabular-nums}
+.stat span{font-size:.76rem;font-weight:800;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em}
+.practised{margin-top:16px;font-size:.92rem;color:var(--ink-soft);font-weight:700}
+.practised .skills{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:8px}
+
+/* box */
+.tabs{display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.75);box-shadow:inset 0 0 0 1.5px var(--line);margin:14px 0 16px;overflow-x:auto}
+.tab{flex:1 0 auto;border:0;background:none;padding:9px 12px;border-radius:999px;font-weight:800;font-size:.88rem;cursor:pointer;color:var(--ink-soft);white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--rose);color:#fff}
+.list{display:grid;gap:10px}
+.item{padding:14px 16px;border-radius:18px;background:#fff;box-shadow:var(--shadow)}
+.item .eyebrow{margin-bottom:4px}
+.item .de{margin:0;font-family:var(--font-display);font-weight:600;font-size:1.12rem;line-height:1.3}
+.item .en{margin:2px 0 0}
+.item.locked{background:rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(236,180,198,.6)}
+.item.locked .de{color:var(--ink-soft);font-family:var(--font-body);font-weight:700;font-size:.95rem}
+.collected{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.collected span{width:38px;height:42px;display:grid;place-items:center;border-radius:12px;background:#FFF1F4;font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:var(--rose-deep);box-shadow:inset 0 0 0 1.5px var(--line)}
+.collected span.empty{color:#D9AEBB}
+.wgroup h3{margin:6px 0 8px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--rose)}
+.word{display:grid;grid-template-columns:36px minmax(0,1fr);align-items:center;gap:10px;padding:8px 10px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line);margin-bottom:6px}
+.word button{width:36px;height:36px;border-radius:50%;border:0;background:var(--blush);display:grid;place-items:center;cursor:pointer}
+.word button svg{width:17px;height:17px;color:var(--rose-deep)}
+.word b{display:block;font-weight:800}
+.word span{color:var(--ink-soft);font-size:.9rem}
+.exam-table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);font-size:.92rem}
+.exam-table th,.exam-table td{padding:10px 12px;text-align:left;vertical-align:top}
+.exam-table th{background:var(--blush);font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
+.exam-table td{border-top:1px solid var(--line)}
+.exam-table td:first-child{font-weight:800}
+.exam-table td:nth-child(2){white-space:nowrap}
+.empty-state{padding:24px 16px;text-align:center;color:var(--ink-soft);font-weight:700}
+
+/* sheet + toast */
+.sheet-wrap{position:fixed;inset:0;z-index:50;background:rgba(87,41,58,.38);display:flex;align-items:flex-end;justify-content:center;animation:fade .25s}
+@keyframes fade{from{opacity:0}}
+.sheet{position:relative;width:min(30rem,100%);max-height:86vh;overflow:auto;background:var(--paper);border-radius:28px 28px 0 0;padding-block:24px calc(24px + env(safe-area-inset-bottom,0px));padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));animation:up .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+@media (min-width:640px){.sheet-wrap{align-items:center}.sheet{border-radius:28px}}
+.sheet h2{margin:0 0 8px;font-family:var(--font-display);font-weight:600;font-size:1.5rem;line-height:1.2;padding-right:40px}
+.sheet p{margin:0 0 10px}
+.sheet ul{margin:0 0 12px;padding-left:1.2em}
+.sheet li{margin-bottom:6px}
+.sheet .close{position:absolute;top:16px;right:max(16px,env(safe-area-inset-right,0px))}
+.secret-badge{display:inline-flex;align-items:center;gap:6px;margin-bottom:10px;padding:5px 12px;border-radius:999px;background:#FFF1D6;color:#8A5A12;font-weight:800;font-size:.8rem}
+.secret-badge svg{width:15px;height:15px}
+.setting{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.setting:first-of-type{border-top:0}
+.setting b{display:block}
+.setting span{font-size:.88rem;color:var(--ink-soft)}
+.switch{position:relative;width:52px;height:30px;flex:none}
+.switch input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:1}
+.switch i{position:absolute;inset:0;border-radius:999px;background:#EBD5DA;transition:background .2s}
+.switch i::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.18);transition:transform .2s}
+.switch input:checked + i{background:var(--rose)}
+.switch input:checked + i::after{transform:translateX(22px)}
+.switch input:focus-visible + i{outline:3px solid var(--sakura);outline-offset:2px}
+.seg{display:flex;gap:4px;padding:3px;border-radius:999px;background:#F6EAED;flex:none}
+.seg button{border:0;background:none;padding:7px 12px;border-radius:999px;font-weight:800;font-size:.84rem;cursor:pointer;color:var(--ink-soft)}
+.seg button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.danger{color:var(--bad)}
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:55;max-width:min(26rem,calc(100% - 32px));padding:12px 18px;border-radius:18px;background:var(--ink);color:#fff;font-weight:700;font-size:.94rem;box-shadow:0 14px 30px -12px rgba(87,41,58,.6);animation:up .3s}
+.golden{position:fixed;top:-60px;left:0;z-index:40;width:52px;height:52px;border:0;background:none;padding:6px;cursor:pointer;animation:drift 14s linear forwards;filter:drop-shadow(0 0 8px rgba(226,174,78,.9))}
+.golden svg{width:100%;height:100%}
+@keyframes drift{0%{transform:translate(var(--x0),0) rotate(0)}25%{transform:translate(calc(var(--x0) + 16vw),30vh) rotate(110deg)}50%{transform:translate(calc(var(--x0) - 4vw),58vh) rotate(220deg)}75%{transform:translate(calc(var(--x0) + 20vw),84vh) rotate(300deg)}100%{transform:translate(calc(var(--x0) + 8vw),115vh) rotate(420deg)}}
+.golden.still{animation:none;top:auto;left:auto;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(90px + env(safe-area-inset-bottom,0px))}
+.bp{position:fixed;width:16px;height:18px;pointer-events:none;z-index:60}
+.bp svg{width:100%;height:100%;display:block}
+.pause-screen{text-align:center;padding-top:30px}
+.pause-screen .bloom{width:150px;height:150px}
+
+/* ---------- Practice, cheat sheet, extras ---------- */
+.pcard{display:grid;grid-template-columns:46px minmax(0,1fr);align-items:center;gap:12px;width:100%;padding:12px 14px;border:0;border-radius:var(--r-md);background:var(--card);box-shadow:var(--shadow);text-align:left;cursor:pointer;transition:transform .15s}
+.pcard:hover{transform:translateX(2px)}
+.pcard .pi{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--blush);color:var(--rose-deep);font-family:var(--font-display);font-weight:600;font-size:.95rem}
+.pcard .pi svg{width:22px;height:22px}
+.pcard .pt b{display:block;font-family:var(--font-display);font-weight:600;font-size:1.08rem;line-height:1.25}
+.pcard .pt span{display:block;font-size:.88rem;font-weight:700;color:var(--ink-soft)}
+.pcard.alert{box-shadow:0 0 0 2px var(--rose),0 16px 30px -18px rgba(200,71,110,.7)}
+.pcard.alert .pi{background:var(--rose);color:#fff}
+.practice-link{margin-top:14px}
+.say-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:10px 0 0;font-size:.9rem;font-weight:700;color:var(--ink-soft)}
+.hear-row{margin:10px 0 0}
+.newwords{margin-top:18px;text-align:left}
+.nw-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(10.5rem,1fr));gap:8px;margin-top:8px}
+.nw{display:grid;grid-template-columns:minmax(0,1fr) 18px;align-items:center;gap:2px 8px;padding:10px 12px;border:0;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line);text-align:left;cursor:pointer}
+.nw b{font-weight:800;overflow-wrap:break-word;hyphens:auto}
+.fineprint{font-size:.84rem;color:var(--ink-soft)}
+.nw span{grid-column:1;font-size:.84rem;color:var(--ink-soft);font-weight:700}
+.nw svg{grid-column:2;grid-row:1/3;width:18px;height:18px;color:var(--rose-deep)}
+.txt.ok{border-color:var(--ok);background:var(--ok-bg)}
+.txt.bad{border-color:var(--bad);background:var(--bad-bg)}
+.chk{display:flex;align-items:center;gap:10px;padding:8px 2px;font-weight:700;cursor:pointer}
+.chk input{accent-color:var(--rose);width:20px;height:20px;margin:0;flex:none}
+.selfcheck{margin-top:12px;padding:10px 14px;border-radius:14px;background:#FFF6EC}
+.selfcheck h4{margin:0 0 2px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--rose)}
+.parts{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.parts li{padding:8px 12px;border-radius:12px;background:#fff;box-shadow:0 0 0 1px var(--line);font-weight:700}
+.parts li b{display:block;font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;color:var(--rose)}
+.cheat{display:grid;gap:10px}
+.cheat details.tip{margin-top:0}
+.cheat .cb{padding:0 14px 14px;font-size:.95rem}
+.cheat .cb p{padding:0;margin:0 0 8px}
+.cheat .cb ul{margin:0 0 8px;padding-left:1.2em}
+.cheat .cb li{margin-bottom:4px}
+.scrollx{overflow-x:auto}
+.mini{width:100%;border-collapse:collapse;font-size:.88rem;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px var(--line);margin:4px 0 10px}
+.mini th,.mini td{padding:6px 8px;text-align:left;vertical-align:top}
+.mini th{background:var(--blush);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.mini td{border-top:1px solid var(--line)}
+.mini td:first-child{font-weight:800;color:var(--rose)}
+.links{display:grid;gap:8px;margin-top:10px}
+.links a{display:block;padding:10px 14px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line);color:var(--ink);font-weight:800;text-decoration:none}
+.links a span{display:block;font-weight:600;font-size:.84rem;color:var(--ink-soft)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+<!-- shared drawings -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="gPink" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FFF5F7"/><stop offset=".45" stop-color="#FCCAD8"/><stop offset="1" stop-color="#F28FAE"/>
+    </radialGradient>
+    <radialGradient id="gPeach" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FFF8F2"/><stop offset=".45" stop-color="#FFD4BE"/><stop offset="1" stop-color="#F5A47F"/>
+    </radialGradient>
+    <radialGradient id="gGold" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#FFF6D8"/><stop offset=".55" stop-color="#F6CF77"/><stop offset="1" stop-color="#D99A2B"/>
+    </radialGradient>
+    <linearGradient id="gPetalLetter" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE9EF"/><stop offset="1" stop-color="#F7B3C8"/>
+    </linearGradient>
+    <symbol id="petalShape" viewBox="-30 -46 60 50">
+      <path d="M0 0C-16-8-21-31-8-43L0-36 8-43C21-31 16-8 0 0Z"/>
+    </symbol>
+    <symbol id="sakura" viewBox="-50 -50 100 100">
+      <g fill="url(#gPink)" stroke="#E7849F" stroke-width="1.2">
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z"/>
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z" transform="rotate(72)"/>
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z" transform="rotate(144)"/>
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z" transform="rotate(216)"/>
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z" transform="rotate(288)"/>
+      </g>
+      <g stroke="#D9668A" stroke-width="1.4" stroke-linecap="round">
+        <path d="M0 0L0-15M0 0L12-8M0 0L10 10M0 0L-10 10M0 0L-12-8M0 0L6-14M0 0L-6-14"/>
+      </g>
+      <g fill="#C9476E"><circle cx="0" cy="-15" r="2"/><circle cx="12" cy="-8" r="2"/><circle cx="10" cy="10" r="2"/><circle cx="-10" cy="10" r="2"/><circle cx="-12" cy="-8" r="2"/><circle cx="6" cy="-14" r="1.6"/><circle cx="-6" cy="-14" r="1.6"/></g>
+      <circle r="5" fill="#FFD9A8"/>
+    </symbol>
+    <symbol id="sakuraPeach" viewBox="-50 -50 100 100">
+      <g fill="url(#gPeach)" stroke="#EE9A79" stroke-width="1.2">
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z"/>
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z" transform="rotate(72)"/>
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z" transform="rotate(144)"/>
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z" transform="rotate(216)"/>
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z" transform="rotate(288)"/>
+      </g>
+      <g stroke="#D9668A" stroke-width="1.4" stroke-linecap="round"><path d="M0 0L0-15M0 0L12-8M0 0L10 10M0 0L-10 10M0 0L-12-8"/></g>
+      <g fill="#C9476E"><circle cx="0" cy="-15" r="2"/><circle cx="12" cy="-8" r="2"/><circle cx="10" cy="10" r="2"/><circle cx="-10" cy="10" r="2"/><circle cx="-12" cy="-8" r="2"/></g>
+      <circle r="5" fill="#FFE7B8"/>
+    </symbol>
+    <symbol id="bud" viewBox="-50 -50 100 100">
+      <path d="M0-30C14-20 15 2 0 14-15 2-14-20 0-30Z" fill="url(#gPink)" stroke="#E7849F" stroke-width="1.5"/>
+      <path d="M-2-26C4-16 5 0 0 12" fill="none" stroke="#F4A7BE" stroke-width="1.5"/>
+      <path d="M-12 8C-6 20 6 20 12 8 6 13-6 13-12 8Z" fill="#9C6B5E"/>
+      <path d="M0 18V30" stroke="#8E5B57" stroke-width="3.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="budLocked" viewBox="-50 -50 100 100">
+      <path d="M0-24C11-16 12 2 0 11-12 2-11-16 0-24Z" fill="#F4DCE2" stroke="#DDB3BF" stroke-width="1.5"/>
+      <path d="M-10 6C-5 16 5 16 10 6 5 10-5 10-10 6Z" fill="#B99A93"/>
+      <path d="M0 14V28" stroke="#B48C88" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="seal" viewBox="-50 -50 100 100">
+      <path d="M0-46C10-46 14-38 22-36 30-34 38-30 40-20 42-10 46-6 46 2 46 10 40 16 38 24 36 32 28 36 20 40 12 44 8 46 0 46-8 46-12 44-20 40-28 36-36 32-38 24-40 16-46 10-46 2-46-6-42-10-40-20-38-30-30-34-22-36-14-38-10-46 0-46Z" fill="#C8476E"/>
+      <circle r="32" fill="none" stroke="#E07595" stroke-width="2.5"/>
+      <g fill="#F6B9CB" opacity=".95" transform="scale(.5)">
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z"/>
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z" transform="rotate(72)"/>
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z" transform="rotate(144)"/>
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z" transform="rotate(216)"/>
+        <path d="M0-4C-16-12-21-35-8-46L0-39 8-46C21-35 16-12 0-4Z" transform="rotate(288)"/>
+      </g>
+      <circle r="5" fill="#A3375A"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect class="ico" x="3" y="5.5" width="18" height="13" rx="2.5"/><path class="ico" d="M4 7.5l8 6 8-6"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path class="ico" d="M4.5 10.5h15v8a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2z"/><path class="ico" d="M3.5 7.5a1.5 1.5 0 0 1 1.5-1.5h14a1.5 1.5 0 0 1 1.5 1.5v3h-17z"/><path class="ico" d="M12 6v14.5M12 6C10.5 3 7 2.6 7 4.5S10 6 12 6zm0 0c1.5-3 5-3.4 5-1.5S14 6 12 6z"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path class="ico" d="M4 7h9M18 7h2M4 17h3M12 17h8"/><circle class="ico" cx="15.5" cy="7" r="2.3"/><circle class="ico" cx="9.5" cy="17" r="2.3"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path class="ico" d="M14.5 5.5L8 12l6.5 6.5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path class="ico" d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+    <symbol id="i-speaker" viewBox="0 0 24 24"><path class="ico" d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="ico" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect class="ico" x="5" y="10.5" width="14" height="10" rx="2.5"/><path class="ico" d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.6l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17l-5.6 3 1.1-6.3L2.9 9.3l6.3-.9z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2.5c.7 4.9 2.1 6.3 7 7-4.9.7-6.3 2.1-7 7-.7-4.9-2.1-6.3-7-7 4.9-.7 6.3-2.1 7-7zM19 15c.3 2 .9 2.7 3 3-2.1.3-2.7.9-3 3-.3-2.1-.9-2.7-3-3 2.1-.3 2.7-1 3-3z" fill="currentColor"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path class="ico" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect class="ico" x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path class="ico" d="M15.5 8.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7.5a2 2 0 0 0 2 2h2.5"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path class="ico" d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol>
+    <symbol id="i-redo" viewBox="0 0 24 24"><path class="ico" d="M20 11a8 8 0 1 0-2.3 5.7"/><path class="ico" d="M20 4.5V11h-6.5"/></symbol>
+    <symbol id="i-cards" viewBox="0 0 24 24"><rect class="ico" x="3.5" y="8" width="13" height="11.5" rx="2"/><path class="ico" d="M7.5 8V6.5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H16.5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path class="ico" d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v13H8a3 3 0 0 1-3-3z"/><path class="ico" d="M5 17a3 3 0 0 1 3-3h10"/></symbol>
+  </defs>
+</svg>
+
+<div class="sky" aria-hidden="true"></div>
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<header class="hud">
+  <button class="brand" data-action="home" aria-label="Zur Startseite">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#sakura"/></svg>
+    <span>Kirschblütenbrief</span>
+  </button>
+  <div class="hud-chips">
+    <span class="chip-hud" id="hudPetals" title="Blütenblätter" aria-label="Blütenblätter"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#sakura"/></svg><span>0</span></span>
+    <button class="chip-hud" id="hudClues" data-action="box" aria-label="Hinweise"><svg aria-hidden="true"><use href="#i-mail"/></svg><span>0/11</span></button>
+    <button class="icon-btn" data-action="box" aria-label="Schatzkiste öffnen"><svg aria-hidden="true"><use href="#i-box"/></svg></button>
+    <button class="icon-btn" data-action="settings" aria-label="Einstellungen"><svg aria-hidden="true"><use href="#i-sliders"/></svg></button>
+  </div>
+</header>
+
+<main class="app" id="app"></main>
+<noscript><p style="padding:24px;text-align:center">Dieses Spiel braucht JavaScript. · This game needs JavaScript turned on.</p></noscript>
+
+<script>
+(() => {
+"use strict";
+
+/* =====================================================================
+   ✿  PERSONALISE HERE  ✿
+   Everything she reads that is "from you" lives in CONFIG.
+   ===================================================================== */
+const CONFIG = {
+  herName: "Nuella",      // Her name or nickname. Leave "" and she types it herself in the first letter.
+  herCountry: "Malawi",   // Used in one introduction question.
+  senderName: "Kelzy",    // Your name. It's the answer to the final puzzle.
+  examDate: "",           // "YYYY-MM-DD" shows a countdown, e.g. "2026-11-28". Leave "" to hide it.
+
+  // One clue per letter, in order. A clue "My name has N letters" is added automatically as clue 7.
+  clues: [
+    { de: "Wir kennen uns schon.", en: "We already know each other." },
+    { de: "Ich studiere Computertechnik.", en: "I study computer engineering." },
+    { de: "Ich spiele gern Videospiele – so wie du.", en: "I like playing video games, just like you." },
+    { de: "Du lachst sehr schön. Wirklich.", en: "You have a really lovely laugh. Really." },
+    { de: "Ich weiß: Du lernst gerade sehr viel. Ich finde das super.", en: "I know you're studying a lot right now. I think that's amazing." },
+    { de: "Ich schaue gern Anime – am liebsten mit Snacks.", en: "I love watching anime, ideally with snacks." },
+    { de: "Meine Lieblingswörter auf Deutsch? „Schmetterlinge im Bauch“.", en: "My favourite German words? 'Butterflies in the stomach.'" },
+    { de: "Ich glaube an dich. Du schaffst die Prüfung!", en: "I believe in you. You'll pass the exam!" },
+    { de: "Ich bin ein bisschen nervös. Du findest mich bald.", en: "I'm a little nervous. You'll find me soon." },
+    { de: "Im letzten Brief steht mein Name.", en: "My name is in the last letter." }
+  ],
+
+  // Three hidden secrets: tap the sleeping cat on the tree, tap the cloud on the title page 3×, catch the golden petal.
+  secrets: {
+    cat:    { title: "Die schlafende Katze", text: "Miau. The cat has been keeping a secret: whoever made this practised one German sentence for a very long time. It's „Du bist süß.“ (You're cute.)" },
+    cloud:  { title: "Eine Wolke mit Geheimnis", text: "Random vocabulary, for no reason at all: in German, a crush is called a „Schwarm“. Totally unrelated to anything. Moving on." },
+    golden: { title: "Achievement unlocked: Das goldene Blütenblatt", text: "Rare drop! Golden petals almost never spawn. Wünsch dir was: make a wish. (Rare and lovely. Sounds like someone I know.)" }
+  },
+
+  // The final letter. {name} = her name, {sender} = your name.
+  finalLetter: {
+    greeting: "Liebe {name},",
+    paragraphs: [
+      "it was me. Every good anime needs a plot twist, and this one is mine.",
+      "I made this little cherry-blossom trail because you've been working so hard for your exam, and I wanted to give you something that makes you smile in between all the Uhrzeiten and Akkusativ.",
+      "You don't have to say anything back. Really, no pressure at all. I just wanted you to know that someone thinks you're pretty amazing, and is cheering for you on exam day.",
+      "Viel Erfolg bei der Prüfung. Du schaffst das."
+    ],
+    closing: "Dein {sender}"
+  },
+
+  bonus: {
+    de: "Ich habe deinen Brief gefunden.",
+    en: "I found your letter.",
+    note: "One last German sentence, only if you feel like using it. You could say it to me next time we talk. Or just smile. Both are perfect answers."
+  },
+
+  encouragements: [
+    { de: "Du schaffst das!", en: "You've got this!" },
+    { de: "Schritt für Schritt.", en: "Step by step." },
+    { de: "Fehler sind Freunde.", en: "Mistakes are how your brain learns." },
+    { de: "Ich bin stolz auf dich.", en: "I'm proud of you." },
+    { de: "Dein Deutsch wird jeden Tag besser.", en: "Your German gets better every day." },
+    { de: "Kleine Pause? Du hast sie verdient.", en: "Little break? You've earned it." }
+  ]
+};
+
+/* =====================================================================
+   The letters. Task types mirror the Goethe-Zertifikat A1: Start Deutsch 1.
+   ===================================================================== */
+const tf = (statement, answer, explain, extra = {}) => ({ type: "tf", statement, answer, explain, ...extra });
+const mc = (prompt, options, answer, explain, extra = {}) => ({ type: "mc", prompt, options, answer, explain, ...extra });
+
+const MAIL1 = { kind: "mail", subject: "Brief Nummer 2", body: "Liebe {name},\nder nächste Brief ist im Café Rosa in der Lindenstraße 8. Das Café ist von 9 bis 18 Uhr geöffnet, aber montags ist es geschlossen.\nFrag dort nach Herrn Weber. Er hat den Brief für dich. Und bestell einen Kakao – der ist dort super!\nBis bald\n?" };
+const MENU1 = { kind: "menu", title: "Café Rosa", lines: ["Heute im Angebot", "Kirschkuchen + Kaffee … 3,50 €", "Kakao … 2,00 €", "Ab 16 Uhr: jeder Kuchen nur 1,50 €"] };
+
+const STAGES = [
+  { // 0
+    title: "Unter dem Kirschbaum", part: "Sprechen · Teil 1", skill: "sprechen",
+    letter: { de: "{greet}\nich habe ein Geheimnis. Unter diesem Kirschbaum liegen elf Briefe. Jeder Brief hat ein Schloss – und der Schlüssel ist Deutsch.\nAber zuerst: Wer bist du? Stell dich bitte vor!", en: "I have a secret. Under this cherry tree lie eleven letters. Every letter has a lock, and the key is German. But first: who are you? Please introduce yourself!" },
+    tip: "Sprechen Teil 1: you introduce yourself with keyword cards: Name, Alter, Land, Wohnort, Sprachen, Beruf, Hobby. You may also be asked to spell something, such as your name. Learn one sentence per card by heart.",
+    questions: [
+      { type: "input", prompt: "Name? · Wie heißt du?", say: "Ich heiße {name}.", explain: "heißen = to be called. In the exam you can start with „Ich heiße …“ or „Mein Name ist …“." },
+      mc("Land? · Woher kommst du?", ["aus", "in", "nach"], 0, "„kommen aus“ = to come from. For where you live, use „in“: Ich wohne in …", { sentence: "Ich komme ___ {country}." }),
+      mc("Alter? · Wie alt bist du?", ["Ich habe zwanzig Jahre.", "Ich bin zwanzig Jahre alt.", "Ich bin alt zwanzig Jahre."], 1, "German uses „sein“ (to be) for age: Ich bin … Jahre alt. „Ich habe … Jahre“ is a classic trap."),
+      mc("Beruf? · Was bist du von Beruf?", ["Student", "Studentin", "Studenten"], 1, "Most job words add -in for women: Student → Studentin, Lehrer → Lehrerin, Arzt → Ärztin.", { sentence: "Ich bin ___." }),
+      mc("Sprachen? · Welche Sprachen sprichst du?", ["spreche", "sprichst", "spricht"], 0, "ich spreche · du sprichst · er/sie spricht. The vowel changes for du and er/sie.", { sentence: "Ich ___ Englisch und ein bisschen Deutsch." }),
+      mc("The examiner says: „Können Sie das bitte buchstabieren?“ What do you do?", ["Say your name again, slowly", "Spell it letter by letter: A – N – N – A", "Tell them your phone number"], 1, "buchstabieren = to spell. In Sprechen Teil 1 you may be asked to spell something, for example your name. Practise the tricky letters: E (eh), I (ih), J (jott), V (fau), W (weh), Z (tsett).", { say: "" })
+    ],
+    outro: { de: "Freut mich, {name}! Jetzt kenne ich dich ein bisschen. Ich schicke dir eine E-Mail…", en: "Nice to meet you, {name}! Now I know you a little. I'll send you an email…" },
+    words: [["heißen", "to be called"], ["kommen aus", "to come from"], ["das Alter", "age"], ["der Beruf", "job"], ["sprechen", "to speak"], ["buchstabieren", "to spell"]]
+  },
+  { // 1
+    title: "Eine E-Mail für dich", part: "Lesen · Teil 1", skill: "lesen",
+    letter: { de: "Liebe {name},\nlies meine E-Mail ganz genau. Was ist richtig, was ist falsch?", en: "Read my email very carefully. What's true, what's false?" },
+    tip: "Lesen Teil 1: two short texts (emails, notes) and five statements: Richtig oder Falsch. Read the statement first, then hunt for that one detail: days, times, prices, who does what.",
+    questions: [
+      tf("Der Brief ist im Café Rosa.", true, "Right in the first line: „Der nächste Brief ist im Café Rosa.“", { ctx: MAIL1 }),
+      tf("Das Café ist jeden Tag geöffnet.", false, "„montags ist es geschlossen“: it's closed on Mondays. montags = every Monday.", { ctx: MAIL1 }),
+      tf("Eine Kellnerin hat den Brief.", false, "Herr Weber has it. „Herr“ = Mr, so it's a man, not a Kellnerin (waitress).", { ctx: MAIL1 }),
+      tf("Ein Kakao kostet heute zwei Euro fünfzig.", false, "2,00 € = zwei Euro. Zwei Euro fünfzig would be 2,50 €.", { ctx: MENU1 }),
+      tf("Am Nachmittag ist der Kuchen billiger.", true, "Ab 16 Uhr (from 4 p.m.) every cake is only 1,50 €. Nachmittag = afternoon, billiger = cheaper.", { ctx: MENU1 })
+    ],
+    outro: { de: "Du gehst ins Café Rosa. Es riecht nach Kakao und Kuchen. Aber Herr Weber ist noch nicht da… Hör gut zu!", en: "You walk into Café Rosa. It smells of cocoa and cake. But Herr Weber isn't here yet… Listen closely!" },
+    words: [["geöffnet", "open"], ["geschlossen", "closed"], ["montags", "on Mondays"], ["das Angebot", "special offer"], ["billiger", "cheaper"]]
+  },
+  { // 2
+    title: "Stimmen im Café", part: "Hören · Teil 1", skill: "hoeren", plays: 2,
+    letter: { de: "Liebe {name},\nim Café sprechen viele Leute. Hör gut zu und finde die richtige Antwort.", en: "Lots of people are talking in the café. Listen closely and find the right answer." },
+    tip: "Hören Teil 1: six short dialogues, answer a, b or c. You hear each one twice. The wrong options are usually mentioned too, so listen to the end before you choose.",
+    questions: [
+      mc("Was kostet der Tee?", ["2,20 €", "2,12 €", "12,20 €"], 0, "zwanzig = 20, zwölf = 12. So „zwei Euro zwanzig“ = 2,20 €.", { audio: [["f", "Entschuldigung, was kostet ein Tee?"], ["m", "Ein Tee kostet zwei Euro zwanzig."], ["f", "Zwei Euro zwanzig? Gut, dann einen Tee, bitte."]] }),
+      mc("Wie spät ist es?", [{ clock: [3, 0] }, { clock: [3, 30] }, { clock: [4, 30] }], 1, "„halb vier“ = half TO four = 3:30. German counts toward the next hour. A famous A1 trap!", { audio: [["m", "Entschuldigung, wie spät ist es, bitte?"], ["f", "Es ist halb vier."], ["m", "Was, schon halb vier? Danke!"]] }),
+      mc("Was isst der Mann?", ["Kirschkuchen", "Tomatensuppe", "Salat"], 1, "He says Kirschkuchen first, then changes his mind. In Hören Teil 1 the first thing you hear is often the trap. Wait for the final decision.", { audio: [["f", "Was möchten Sie essen?"], ["m", "Hm, den Kirschkuchen … ach nein, der ist so süß. Haben Sie eine Suppe?"], ["f", "Ja, Tomatensuppe."], ["m", "Gut, dann eine Tomatensuppe, bitte. Ohne Salat."]] }),
+      mc("Wo ist die Toilette?", ["Oben im ersten Stock", "Rechts um die Ecke", "Unten im Keller"], 1, "rechts um die Ecke = right, around the corner. oben = upstairs, unten = downstairs.", { audio: [["f", "Entschuldigung, ist die Toilette oben?"], ["m", "Nein, nicht oben. Gehen Sie hier rechts um die Ecke."], ["f", "Rechts um die Ecke. Danke schön!"]] }),
+      mc("Wann kommt Herr Weber?", ["Um 14 Uhr", "Um 16 Uhr", "Um 17 Uhr"], 1, "People say „um vier“ in everyday speech. Written times use 24 hours: 16 Uhr = 4 p.m.", { audio: [["f", "Hallo, ist Herr Weber da?"], ["m", "Nein, er kommt heute später. Nicht um zwei … um vier."], ["f", "Um vier? Okay, dann warte ich."]] }),
+      mc("Wann ist die Bäckerei am Wochenende offen?", ["Samstag und Sonntag", "Nur am Samstag", "Nur am Sonntag"], 1, "„Am Sonntag haben wir geschlossen“: closed on Sunday. So only Saturday, from 7 to 12 Uhr. Wochenende = Samstag + Sonntag.", { audio: [["m", "Entschuldigung, haben Sie am Wochenende geöffnet?"], ["f", "Am Samstag ja, von sieben bis zwölf Uhr. Am Sonntag haben wir geschlossen."], ["m", "Dann komme ich am Samstag. Danke!"]] })
+    ],
+    outro: { de: "Um vier Uhr kommt Herr Weber. Er lächelt und gibt dir einen rosa Umschlag. Darauf steht nur: „Geh in die Stadt. Lies die Schilder.“", en: "At four o'clock Herr Weber arrives. He smiles and hands you a pink envelope. All it says is: 'Go into town. Read the signs.'" },
+    words: [["halb vier", "half past three (3:30)"], ["zwanzig", "twenty"], ["zwölf", "twelve"], ["rechts um die Ecke", "right, around the corner"], ["später", "later"]]
+  },
+  { // 3
+    title: "Schilder in der Stadt", part: "Lesen · Teil 3", skill: "lesen",
+    letter: { de: "Liebe {name},\nmein nächster Brief ist hinter einem Schild. Lies die Schilder genau!", en: "My next letter is behind a sign. Read the signs carefully!" },
+    tip: "Lesen Teil 3: signs and notices, Richtig oder Falsch. The statement usually tests one exact thing: a day, a time, a price, or a word like „nicht“, „kein“ or „verboten“.",
+    questions: [
+      tf("Es ist Mittwoch, 13 Uhr. Die Post ist geöffnet.", false, "Monday to Friday the post office closes from 12.30 to 14.00. Lunch break!", { ctx: { kind: "sign", where: "An der Post", title: "Öffnungszeiten", lines: ["Mo – Fr  8.30 – 12.30 und 14.00 – 18.00", "Sa  9.00 – 12.00"], tilt: -1.5 } }),
+      tf("Zehn Rosen kosten heute zehn Euro.", true, "1 € pro Stück (per piece), so ten roses = 10 €.", { ctx: { kind: "sign", where: "Am Blumenladen", title: "Heute!", lines: ["Rosen nur 1 € pro Stück", "Tulpen: 5 Stück für 4 €"], tilt: 2 } }),
+      tf("Im Park dürfen Sie Fahrrad fahren.", false, "„Keine Fahrräder!“ = no bikes.", { ctx: { kind: "sign", where: "Im Stadtpark", title: "Bitte beachten", lines: ["Keine Fahrräder!", "Hunde nur an der Leine."], tilt: -2 } }),
+      tf("Am 10. Mai können Sie hier Brot kaufen.", false, "The bakery is closed from 3 to 17 May, and 10 May is in between.", { ctx: { kind: "sign", where: "An der Bäckerei", title: "Wir machen Urlaub!", lines: ["Vom 3. bis 17. Mai geschlossen.", "Ab 18. Mai sind wir wieder da."], tilt: 1.5 } }),
+      tf("Heute können Sie mit der Linie 4 fahren.", true, "Line 12 isn't running today, so the sign sends you to line 4.", { ctx: { kind: "sign", where: "An der Haltestelle", title: "Achtung", lines: ["Linie 12 fährt heute nicht.", "Bitte nehmen Sie die Linie 4."], tilt: -1 } })
+    ],
+    outro: { de: "Hinter dem Schild vom Blumenladen klebt ein Umschlag. Er riecht nach Rosen. Darin: eine Fahrkarte und ein Zettel – „Zum Bahnhof!“", en: "Behind the flower-shop sign there's an envelope taped. It smells of roses. Inside: a ticket and a note: 'To the station!'" },
+    words: [["die Öffnungszeiten", "opening hours"], ["pro Stück", "per piece"], ["kein / keine", "no / none"], ["der Urlaub", "holiday"], ["die Haltestelle", "bus stop"]]
+  },
+  { // 4
+    title: "Am Bahnhof", part: "Hören · Teil 2", skill: "hoeren", plays: 1,
+    letter: { de: "Liebe {name},\nam Bahnhof gibt es viele Durchsagen. Hör gut zu – du hörst jeden Text nur einmal!", en: "There are lots of announcements at the station. Listen carefully: you hear each one only once!" },
+    tip: "Hören Teil 2: announcements at stations, airports or in shops, Richtig oder Falsch. Careful: you hear each text only once! Read the statement first so you know what to listen for.",
+    questions: [
+      tf("Der Zug nach Hamburg fährt heute von Gleis 5.", true, "Gleis = platform. Normally platform 3, but today platform 5.", { audio: [["a", "Achtung an Gleis 3. Der ICE nach Hamburg, Abfahrt 10 Uhr 15, fährt heute von Gleis 5. Ich wiederhole: Der ICE nach Hamburg fährt heute von Gleis 5.", "Achtung an Gleis drei. Der I C E nach Hamburg, Abfahrt zehn Uhr fünfzehn, fährt heute von Gleis fünf. Ich wiederhole: Der I C E nach Hamburg fährt heute von Gleis fünf."]] }),
+      tf("Die Fahrgäste sollen im Bahnhofscafé warten.", false, "„Bitte bleiben Sie am Gleis“: stay on the platform. Verspätung = delay.", { audio: [["a", "Liebe Fahrgäste, der Regionalexpress nach Köln hat 20 Minuten Verspätung. Bitte bleiben Sie am Gleis. Wir bitten um Entschuldigung.", "Liebe Fahrgäste, der Regionalexpress nach Köln hat zwanzig Minuten Verspätung. Bitte bleiben Sie am Gleis. Wir bitten um Entschuldigung."]] }),
+      tf("Frau Sommer soll zur Information kommen.", true, "The announcement asks Frau Sommer to come to the information desk, where little Mia is waiting.", { audio: [["a", "Die kleine Mia sucht ihre Mama. Frau Sommer, bitte kommen Sie zur Information in der Bahnhofshalle. Mia wartet dort auf Sie."]] }),
+      tf("Der Kiosk ist heute bis 22 Uhr geöffnet.", false, "Feiertag = public holiday. Today the kiosk is only open until 14 Uhr (2 p.m.).", { audio: [["a", "Liebe Reisende, heute ist Feiertag. Unser Kiosk in der Bahnhofshalle ist heute nur bis 14 Uhr geöffnet.", "Liebe Reisende, heute ist Feiertag. Unser Kiosk in der Bahnhofshalle ist heute nur bis vierzehn Uhr geöffnet."]] }),
+      tf("An der Information liegt ein Brief für {name}.", true, "Did you hear your name? „Für Sie liegt dort ein Brief“: there's a letter there for you.", { audio: [["a", "Eine Durchsage für {name}: Bitte kommen Sie zur Information. Für Sie liegt dort ein Brief."]] })
+    ],
+    outro: { de: "An der Information gibt dir eine Frau den Brief. Auf dem Umschlag: eine kleine Kirschblüte. Und ein paar Internetadressen…", en: "At the information desk a woman hands you the letter. On the envelope: a little cherry blossom. And a few web addresses…" },
+    words: [["das Gleis", "platform"], ["die Verspätung", "delay"], ["die Durchsage", "announcement"], ["der Feiertag", "public holiday"], ["bleiben", "to stay"]]
+  },
+  { // 5
+    title: "Im Internet", part: "Lesen · Teil 2", skill: "lesen",
+    letter: { de: "Liebe {name},\nich habe dir ein paar Webseiten aufgeschrieben. Welche Seite hilft dir?", en: "I wrote down a few websites for you. Which site helps you?" },
+    tip: "Lesen Teil 2: for each task you see two websites or timetables. Choose a or b. You don't need every word. Ask yourself: which one does exactly what the person needs?",
+    questions: [
+      mc("Sie möchten Kirschblütentee kaufen.", [{ web: { url: "www.teehaus-bluete.de", title: "Teehaus Blüte", lines: ["Grüner Tee · Kirschblütentee · Kräutertee", "Online-Shop: Hier bestellen!"] } }, { web: { url: "www.teekurs-berlin.de", title: "Teekurse am Wochenende", lines: ["Lernen Sie die japanische Teezeremonie.", "Termine · Anmeldung"] } }], 0, "You want to buy tea, so you need the shop (bestellen = to order). The other site sells courses."),
+      mc("Sie möchten am Sonntag ins Museum gehen.", [{ web: { url: "www.stadtmuseum-bluetenberg.de", title: "Stadtmuseum", lines: ["Di – Sa: 10 – 17 Uhr", "Sonntag und Montag geschlossen"] } }, { web: { url: "www.kunsthalle-bluetenberg.de", title: "Kunsthalle", lines: ["Täglich geöffnet: 11 – 18 Uhr", "Auch am Wochenende!"] } }], 1, "täglich = every day, so the Kunsthalle is open on Sunday. The Stadtmuseum is closed on Sunday."),
+      mc("Sie suchen ein Zimmer für zwei Nächte.", [{ web: { url: "www.wg-zimmer.de", title: "WG-Zimmer für Studenten", lines: ["Mindestens 6 Monate", "Möbliert, mit Internet"] } }, { web: { url: "www.pension-sonne.de", title: "Pension Sonne", lines: ["Einzel- und Doppelzimmer ab 1 Nacht", "Mit Frühstück"] } }], 1, "mindestens 6 Monate = at least 6 months. Far too long for two nights."),
+      mc("Sie möchten abends Deutsch lernen.", [{ web: { url: "www.sprachschule-mond.de", title: "Sprachschule Mond", lines: ["Deutschkurse A1 – B2", "Mo – Do, 18 – 20 Uhr"] } }, { web: { url: "www.sprachschule-sonne.de", title: "Sprachschule Sonne", lines: ["Deutsch für Kinder", "Vormittags, 9 – 12 Uhr"] } }], 0, "abends = in the evening. 18 – 20 Uhr is 6 – 8 p.m. The other school is for children, in the morning."),
+      mc("Sie sind in Köln und möchten um 12 Uhr in Bonn sein.", [{ train: [["ab", "Köln", "11.20"], ["an", "Bonn", "11.45"]] }, { train: [["ab", "Köln", "11.50"], ["an", "Bonn", "12.15"]] }], 0, "ab = departs, an = arrives. The second train arrives at 12.15. Too late!")
+    ],
+    outro: { de: "Im Online-Shop vom Teehaus Blüte steht ein Kommentar: „Für {name}: Am Samstag ist das Kirschblütenfest. Lea braucht deine Hilfe bei der Anmeldung.“", en: "In the Teehaus Blüte shop there's a comment: 'For {name}: the Cherry Blossom Festival is on Saturday. Lea needs your help with the registration.'" },
+    words: [["bestellen", "to order"], ["täglich", "daily"], ["mindestens", "at least"], ["abends", "in the evening"], ["ab / an", "departs / arrives"]]
+  },
+  { // 6
+    title: "Die Anmeldung", part: "Schreiben · Teil 1", skill: "schreiben",
+    letter: { de: "Liebe {name},\nhilf deiner Freundin Lea! Sie möchte zum Kirschblütenfest. Im Formular fehlen fünf Informationen.", en: "Help your friend Lea! She wants to go to the Cherry Blossom Festival. Five pieces of information are missing from the form." },
+    tip: "Schreiben Teil 1: you fill in a form for a friend, with five gaps. Short answers are perfect: a number, a town, „bar“, a date. Copy spellings carefully from the text.",
+    questions: [
+      { type: "form", weight: 5,
+        task: { de: "Deine Freundin Lea Brandt geht mit ihrem Mann und ihren zwei Töchtern zum Kirschblütenfest im Stadtpark. Das Fest ist am Samstag, 12. April. Lea wohnt im Rosenweg 7 in 54321 Blütenberg. Sie hat keine Kreditkarte.", en: "Your friend Lea Brandt is going to the Cherry Blossom Festival in the city park with her husband and her two daughters. The festival is on Saturday, 12 April. Lea lives at Rosenweg 7, 54321 Blütenberg. She has no credit card." },
+        fields: [
+          { label: "Familienname, Vorname", given: "Brandt, Lea" },
+          { id: "f1", n: 1, label: "Anzahl der Personen", test: v => /^(4|vier)$/i.test(v), sol: "4", why: "Lea + ihr Mann + zwei Töchter = 4" },
+          { id: "f2", n: 2, label: "Davon Kinder", test: v => /^(2|zwei)$/i.test(v), sol: "2", why: "zwei Töchter = 2 Kinder" },
+          { label: "Straße, Hausnummer", given: "Rosenweg 7" },
+          { id: "f3", n: 3, label: "PLZ, Wohnort", prefix: "54321", test: v => v.toLowerCase().replace(/ü/g, "u").replace(/ue/g, "u").replace(/[^a-z]/g, "") === "blutenberg", sol: "Blütenberg", why: "Wohnort = the town where she lives" },
+          { id: "f4", n: 4, label: "Zahlungsweise", radio: ["bar", "Kreditkarte"], test: v => v === "bar", sol: "bar", why: "Sie hat keine Kreditkarte → bar (cash)" },
+          { id: "f5", n: 5, label: "Datum", test: v => /12|samstag/i.test(v), sol: "Samstag, 12. April", why: "Das Fest ist am Samstag, 12. April" }
+        ] }
+    ],
+    outro: { de: "Fertig! Lea sagt: „Danke, du bist ein Schatz!“ Dann vibriert dein Handy. Fünf neue Nachrichten…", en: "Done! Lea says: 'Thanks, you're a treasure!' Then your phone buzzes. Five new messages…" },
+    words: [["die Anmeldung", "registration"], ["die Anzahl", "number (how many)"], ["davon", "of which"], ["bar zahlen", "to pay cash"], ["das Formular", "form"]]
+  },
+  { // 7
+    title: "Neue Nachrichten", part: "Hören · Teil 3", skill: "hoeren", plays: 2,
+    letter: { de: "Liebe {name},\ndu hast fünf Nachrichten auf dem Handy. Eine ist von mir. Hör gut zu!", en: "You have five messages on your phone. One of them is from me. Listen closely!" },
+    tip: "Hören Teil 3: messages on an answering machine, answer a, b or c. You hear each one twice. Numbers, days, times and places are the favourite targets, so note them down while you listen.",
+    questions: [
+      mc("Die neue Telefonnummer ist:", ["0176 34 58 21", "0176 43 58 21", "0176 34 85 21"], 0, "German says the ones first: vierunddreißig = „four-and-thirty“ = 34, achtundfünfzig = 58.", { audio: [["m", "Guten Tag, hier ist die Bäckerei Krume. Wir haben eine neue Telefonnummer. Bitte rufen Sie uns unter 0176 – 34 – 58 – 21 an.", "Guten Tag, hier ist die Bäckerei Krume. Wir haben eine neue Telefonnummer. Bitte rufen Sie uns unter null, eins, sieben, sechs … vierunddreißig … achtundfünfzig … einundzwanzig an."]] }),
+      mc("Wo treffen sich die Freundinnen?", ["Am Kino", "Im Park", "Vor der Bibliothek"], 2, "The cinema is closed today, so Sara suggests „vor der Bibliothek“: in front of the library.", { audio: [["f", "Hi, hier ist Sara. Wir wollten uns doch am Kino treffen, oder? Das Kino ist heute leider geschlossen. Treffen wir uns vor der Bibliothek? Um drei? Bis dann!"]] }),
+      mc("Wann ist der neue Termin?", ["Dienstag, 9 Uhr", "Donnerstag, 9 Uhr", "Donnerstag, 10 Uhr"], 2, "Tuesday at nine doesn't work („geht leider nicht“). The new appointment: Donnerstag um zehn Uhr.", { audio: [["f", "Guten Tag, hier ist die Praxis Doktor Klein. Ihr Termin am Dienstag um neun Uhr geht leider nicht. Können Sie am Donnerstag um zehn Uhr kommen? Bitte rufen Sie uns zurück. Danke."]] }),
+      mc("Wie viel kostet das Fest pro Person?", ["13 Euro", "15 Euro", "50 Euro"], 1, "fünfzehn = 15 (fünf + zehn), fünfzig = 50. Listen to the ending: -zehn means 10 + something, -zig means a full ten.", { audio: [["f", "Hallo {name}, hier ist Lea. Danke für deine Hilfe bei der Anmeldung! Das Fest kostet fünfzehn Euro pro Person. Bis morgen!"]] }),
+      mc("Was soll {name} mitbringen?", ["Einen Stift", "Eine Jacke", "Ein Buch"], 1, "mitbringen = to bring along. „Einen Stift brauchst du nicht“: you don't need a pen.", { audio: [["m", "Hallo {name}, ich bin’s – dein geheimer Briefschreiber. Morgen ist das Kirschblütenfest. Am Abend ist es im Park kalt. Bring bitte eine Jacke mit. Einen Stift brauchst du nicht. Bis morgen!"]] })
+    ],
+    outro: { de: "Seine Stimme klingt komisch – wie ein Roboter. Er versteckt sich gut! Morgen ist das Fest. Du nimmst eine Jacke mit.", en: "His voice sounds funny, like a robot. He's hiding well! Tomorrow is the festival. You bring a jacket." },
+    words: [["die Nachricht", "message"], ["zurückrufen", "to call back"], ["der Termin", "appointment"], ["mitbringen", "to bring along"], ["sich treffen", "to meet"], ["pro Person", "per person"]]
+  },
+  { // 8
+    title: "Auf dem Fest", part: "Sprechen · Teil 2", skill: "sprechen",
+    letter: { de: "Liebe {name},\nauf dem Fest gibt es viele Stände. Stell Fragen – und gib Antworten!", en: "There are lots of stalls at the festival. Ask questions, and give answers!" },
+    tip: "Sprechen Teil 2: you draw a card with a topic and a word (e.g. Essen & Trinken: Frühstück). Ask your partner a question with that word, then answer their question. Simple, correct questions win points.",
+    questions: [
+      mc("Which question fits your card?", ["Was isst du zum Frühstück?", "Was du isst zum Frühstück?", "Zum Frühstück du essen was?"], 0, "W-questions: question word first, verb second: Was isst du …?", { ctx: { kind: "topic", theme: "Essen & Trinken", word: "Frühstück" } }),
+      mc("Your partner asks: „Was ist dein Lieblingsessen?“ Your answer:", ["Mein Lieblingsessen ist Nsima mit Fisch.", "Ja, ich esse gern.", "Um zwölf Uhr."], 0, "Answer the actual question: Mein Lieblingsessen ist … (Nsima absolutely counts.)", { ctx: { kind: "topic", theme: "Essen & Trinken", word: "Lieblingsessen" } }),
+      mc("Your partner asks: „Wo kann ich Obst kaufen?“ Your answer:", ["Auf dem Markt oder im Supermarkt.", "Am Montag.", "Nein, ich habe kein Obst."], 0, "„Wo?“ asks for a place. „Wann?“ would ask for a time.", { ctx: { kind: "topic", theme: "Einkaufen", word: "Obst" } }),
+      mc("Which question is correct?", ["Was kosten die Schuhe?", "Was kostet die Schuhe?", "Wie viel kosten Schuhe die?"], 0, "„die Schuhe“ is plural, so the verb is „kosten“, not „kostet“.", { ctx: { kind: "topic", theme: "Einkaufen", word: "Schuhe" } }),
+      mc("Your partner asks: „Spielst du am Wochenende Videospiele?“ Your answer:", ["Nur ein bisschen. Ich habe bald eine Prüfung!", "Ja, Videospiele ist ein Wort.", "Ich heiße Videospiel."], 0, "A full, friendly answer: Ja / Nein / Nur ein bisschen + a short reason. (Very relatable, too.)", { ctx: { kind: "topic", theme: "Wochenende", word: "Videospiele" } })
+    ],
+    outro: { de: "Am Stand mit den Kirschblüten liegt ein Brief. Die Verkäuferin zwinkert: „Der ist für dich.“", en: "At the cherry blossom stall there's a letter. The stallholder winks: 'That one's for you.'" },
+    words: [["das Frühstück", "breakfast"], ["das Lieblingsessen", "favourite food"], ["das Obst", "fruit"], ["die Schuhe", "shoes"], ["das Wochenende", "weekend"]]
+  },
+  { // 9
+    title: "Eine kleine Bitte", part: "Sprechen · Teil 3", skill: "sprechen",
+    letter: { de: "Liebe {name},\nes ist spät und ein bisschen kalt. Du brauchst ein paar Dinge. Wie fragst du höflich?", en: "It's late and a little cold. You need a few things. How do you ask politely?" },
+    tip: "Sprechen Teil 3: picture cards (a glass, a pen, a phone…). Make a polite request, like „Kann ich bitte …?“, „Hast du …?“ or „…, bitte!“, and react to your partner's: „Ja, natürlich. Bitte.“",
+    questions: [
+      mc("Ask politely for this:", ["Kann ich bitte ein Glas Wasser haben?", "Ich Wasser trinken, bitte.", "Haben Sie Glas?"], 0, "„Kann ich bitte … haben?“ is a perfect polite request. The answer you'd hear: „Ja, natürlich. Bitte.“", { ctx: { kind: "pic", pic: "glass" } }),
+      mc("Ask politely for this:", ["Hast du einen Stift für mich?", "Hast du ein Stift für mich?", "Du hast Stift?"], 0, "der Stift → einen Stift. Masculine words change ein → einen after verbs like haben (accusative).", { ctx: { kind: "pic", pic: "pencil" } }),
+      mc("It's cold. Ask politely:", ["Kannst du bitte das Fenster zumachen?", "Kannst du bitte zumachen das Fenster?", "Fenster zu, du bitte?"], 0, "zumachen = to close. With kannst du … the second verb goes to the end: Kannst du bitte das Fenster zumachen?", { ctx: { kind: "pic", pic: "window" } }),
+      mc("Someone asks you: „Kann ich mal dein Handy benutzen?“ You react:", ["Ja, klar. Hier, bitte.", "Bitte, danke, tschüss.", "Nein, ich bin ein Handy."], 0, "In Teil 3 you also react to your partner's request. „Ja, klar. Hier, bitte.“ or „Tut mir leid, das geht nicht.“ both work.", { ctx: { kind: "pic", pic: "phone" } }),
+      mc("Someone lights a cigarette right under this sign. You say:", ["Entschuldigung, hier ist Rauchen verboten.", "Entschuldigung, Rauchen ist hier sehr gut.", "Bitte, rauchen Sie mehr."], 0, "verboten = not allowed. „Hier ist Rauchen verboten“ is polite and clear.", { ctx: { kind: "pic", pic: "nosmoke" } })
+    ],
+    outro: { de: "Jetzt ist dir warm, und du hast alles. Es gibt nur noch einen Brief … aber er ist zu. Er wartet auf deine Antwort.", en: "Now you're warm and you have everything. There's only one letter left… but it's sealed. It's waiting for your reply." },
+    words: [["höflich", "polite"], ["der Stift", "pen"], ["zumachen", "to close"], ["benutzen", "to use"], ["Rauchen verboten", "no smoking"]]
+  },
+  { // 10
+    title: "Deine Antwort", part: "Schreiben · Teil 2", skill: "schreiben",
+    letter: { de: "Liebe {name},\njetzt bist du dran. Schreib mir!", en: "Now it's your turn. Write to me!" },
+    tip: "Schreiben Teil 2: a short message of about 30 words that covers three points, with a greeting (Liebe …, / Hallo …,) and a sign-off (Viele Grüße). Graders check that every point is covered and understandable. Perfect grammar isn't required, but a missing point costs marks.",
+    questions: [
+      { type: "write", weight: 4,
+        task: { de: "Du hast fast alle Briefe gefunden. Schreib dem geheimen Briefschreiber:", points: ["Warum schreibst du?", "Bitte um den letzten Hinweis.", "Frag: Wer bist du?"], de2: "Schreib zu jedem Punkt ein bis zwei Sätze (circa 30 Wörter). Schreib auch eine Anrede und einen Gruß.", en: "You've found almost all the letters. Write to the secret letter-writer: say why you're writing, ask for the last clue, and ask who he is. One or two sentences per point (about 30 words), plus a greeting and a sign-off." },
+        model: "Lieber Briefschreiber,\nich habe fast alle deine Briefe gefunden. Das war wirklich schön! Kannst du mir bitte den letzten Hinweis geben? Ich habe noch eine Frage: Wer bist du?\nViele Grüße\n{name}",
+        parts: [["Anrede", "Lieber Briefschreiber,"], ["Punkt 1 · Warum schreibst du?", "Ich habe fast alle deine Briefe gefunden. Das war wirklich schön!"], ["Punkt 2 · Bitte um den letzten Hinweis", "Kannst du mir bitte den letzten Hinweis geben?"], ["Punkt 3 · Frag: Wer bist du?", "Ich habe noch eine Frage: Wer bist du?"], ["Gruß", "Viele Grüße, {name}"]] }
+    ],
+    outro: { de: "Was für ein schöner Brief! Der letzte Umschlag öffnet sich ein kleines Stück…", en: "What a lovely letter! The last envelope opens just a little…" },
+    words: [["die Anrede", "greeting (Liebe …, / Hallo …,)"], ["der Gruß", "sign-off (Viele Grüße)"], ["der Hinweis", "clue, hint"], ["die Frage", "question"], ["schreiben", "to write"]]
+  }
+];
+const N = STAGES.length;          // 11 stages that give a clue
+const FINALE = N;                 // index of the last letter
+
+/* =====================================================================
+   State
+   ===================================================================== */
+const KEY = "kirschbluetenbrief:v1";
+const defaults = () => ({ herName: "", done: {}, petals: 0, secrets: [], draft: "", settings: { breaks: true, rate: 0.9, strict: false }, cur: null, finale: false, missed: {} });
+let state = load();
+function load() {
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (raw) {
+      const s = Object.assign(defaults(), JSON.parse(raw));
+      s.settings = Object.assign(defaults().settings, s.settings || {});
+      if (!s.missed || typeof s.missed !== "object") s.missed = {};
+      if (!s.cur || !STAGES[s.cur.stage]) s.cur = null;
+      return s;
+    }
+  } catch (e) {}
+  return defaults();
+}
+function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+let ui = { screen: "title", stage: 0, phase: "intro", qi: 0, correct: 0, answered: false, picked: null, fbWord: null, form: {}, formChecked: false, writeChecked: false, pts: [], plays: 0, showT: false, showEn: false, boxTab: "clues", fin: { slots: [], tries: 0, opening: false }, cloudTaps: 0, reward: null, drill: null, typedVal: "" };
+
+const reduceMotion = (() => { try { return matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) { return false; } })();
+
+/* =====================================================================
+   Helpers
+   ===================================================================== */
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const herName = () => (state.herName || CONFIG.herName || "").trim();
+function fill(s) {
+  const n = herName();
+  return String(s)
+    .replace(/\{greet\}/g, n ? "Liebe " + n + "," : "Hallo du,")
+    .replace(/\{name\}/g, n || "du")
+    .replace(/\{sender\}/g, CONFIG.senderName)
+    .replace(/\{country\}/g, CONFIG.herCountry || "Malawi");
+}
+const txt = s => esc(fill(s)).replace(/\n/g, "<br>");
+const paras = s => fill(s).split("\n").map(p => `<p>${esc(p)}</p>`).join("");
+const icon = (id, cls = "") => `<svg class="${cls}" aria-hidden="true"><use href="#${id}"/></svg>`;
+const flower = (peach) => `<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#${peach ? "sakuraPeach" : "sakura"}"/></svg>`;
+const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+function seeded(seed) { let s = (seed >>> 0) || 1; return () => (s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296; }
+function shuffleSeed(arr, seed) { const a = arr.slice(), r = seeded(seed); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+const weight = q => q.weight || 1;
+const stageTotal = st => st.questions.reduce((a, q) => a + weight(q), 0);
+const isDone = i => !!state.done[i];
+const countDone = () => Object.keys(state.done).filter(k => +k < N).length;
+const allDone = () => countDone() >= N;
+const unlocked = i => i === 0 || isDone(i - 1);
+const lettersOpened = () => Math.max(0, countDone() - (isDone(0) ? 1 : 0)) + (state.finale ? 1 : 0);
+const label = i => i === 0 ? "Prolog" : i === FINALE ? "Brief 11" : "Brief " + i;
+const inDrill = () => ui.screen === "drill";
+const curItem = () => ui.drill.items[ui.drill.pos];
+const curQ = () => inDrill() ? curItem().q : STAGES[ui.stage].questions[ui.qi];
+const activeStage = () => inDrill() ? (curItem().stage != null ? STAGES[curItem().stage] : null) : STAGES[ui.stage];
+const missedList = () => Object.keys(state.missed).map(r => r.split(":").map(Number)).filter(([s, k]) => STAGES[s] && STAGES[s].questions[k]);
+
+const OK_WORDS = [["Genau!", "Exactly!"], ["Super!", "Great!"], ["Richtig!", "Correct!"], ["Toll gemacht!", "Well done!"], ["Perfekt!", "Perfect!"], ["Sehr gut!", "Very good!"]];
+const BAD_WORDS = [["Fast!", "Almost!"], ["Knapp daneben!", "So close!"], ["Kein Problem!", "No problem!"], ["Fehler sind Freunde.", "Mistakes help you learn."]];
+
+/* name puzzle */
+function nameLetters() { return (CONFIG.senderName || "").toLocaleUpperCase("de-DE").replace(/[^A-ZÄÖÜ]/g, "").split(""); }
+function scrambled() {
+  const L = nameLetters(); if (L.length < 2) return L;
+  let s = shuffleSeed(L, 4711);
+  if (s.join("") === L.join("")) s = s.slice(1).concat(s[0]);
+  return s;
+}
+function letterPlan() {
+  const s = scrambled(), L = Math.min(s.length, N), plan = {};
+  for (let k = 0; k < L; k++) plan[Math.floor((k + 1) * N / L) - 1] = s[k];
+  return plan;
+}
+function clueList() {
+  const nums = ["null", "einen", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf", "zwölf", "dreizehn", "vierzehn", "fünfzehn"];
+  const L = nameLetters().length;
+  const nameClue = { de: `Mein Name hat ${nums[L] || L} Buchstaben.`, en: `My name has ${L} letter${L === 1 ? "" : "s"}.` };
+  const base = (CONFIG.clues || []).slice(0, 10);
+  while (base.length < 10) base.push({ de: "Du findest mich bald.", en: "You'll find me soon." });
+  base.splice(6, 0, nameClue);
+  return base;
+}
+
+/* countdown */
+function countdownHTML() {
+  if (!CONFIG.examDate) return "";
+  const d = new Date(CONFIG.examDate + "T00:00:00");
+  if (isNaN(d)) return "";
+  const t = new Date(); t.setHours(0, 0, 0, 0);
+  const days = Math.round((d - t) / 86400000);
+  if (days < 0) return "";
+  const msg = days === 0 ? "Heute ist Prüfungstag. Viel Glück!" : `Noch <b>${days}</b> ${days === 1 ? "Tag" : "Tage"} bis zur Prüfung`;
+  return `<div class="countdown">${icon("i-spark")}<span>${msg}</span></div>`;
+}
+
+/* =====================================================================
+   Practice drills: rounds that are generated fresh every time
+   ===================================================================== */
+const shuffle = a => { const r = a.slice(); for (let i = r.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [r[i], r[j]] = [r[j], r[i]]; } return r; };
+const rnd = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+const ONES = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf", "zwölf", "dreizehn", "vierzehn", "fünfzehn", "sechzehn", "siebzehn", "achtzehn", "neunzehn"];
+const TENS = ["", "", "zwanzig", "dreißig", "vierzig", "fünfzig", "sechzig", "siebzig", "achtzig", "neunzig"];
+const deNum = n => n < 20 ? ONES[n] : n === 100 ? "hundert" : (n % 10 ? (n % 10 === 1 ? "ein" : ONES[n % 10]) + "und" : "") + TENS[Math.floor(n / 10)];
+const deEuro = (e, c) => (e === 1 ? "ein" : deNum(e)) + " Euro" + (c ? " " + deNum(c) : "");
+const hw = h => ONES[((h + 11) % 12) + 1];                  // any hour -> "eins" … "zwölf"
+const face = h => ((h + 11) % 12) + 1;                       // any hour -> 1…12 on the clock face
+const deClock = (h, m) => m === 0 ? (face(h) === 1 ? "ein" : hw(h)) + " Uhr" : m === 15 ? "Viertel nach " + hw(h) : m === 30 ? "halb " + hw(h + 1) : "Viertel vor " + hw(h + 1);
+const squash = s => s.toUpperCase().replace(/Ä/g, "AE").replace(/Ö/g, "OE").replace(/Ü/g, "UE").replace(/ß/g, "SS").replace(/[^A-Z]/g, "");
+const LETTER_NAME = { A: "ah", B: "beh", C: "tseh", D: "deh", E: "eh", F: "eff", G: "geh", H: "hah", I: "ih", J: "jott", K: "kah", L: "ell", M: "emm", N: "enn", O: "oh", P: "peh", Q: "kuh", R: "err", S: "ess", T: "teh", U: "uh", V: "fau", W: "weh", X: "iks", Y: "üpsilon", Z: "tsett", Ä: "ä", Ö: "ö", Ü: "ü" };
+const SPELL_WORDS = ["BLÜTENBERG", "MALAWI", "KÖLN", "MÜLLER", "SCHMIDT", "WEBER", "ZÜRICH", "HAMBURG", "SOMMER", "FISCHER", "BRANDT", "ROSENWEG"];
+
+/* a typed answer: she hears (or reads) something and types it. `check` decides, `show` is the model answer */
+const typed = (prompt, sub, audio, text, expect, show, check, explain, extra = {}) => ({ type: "typed", prompt, sub, audio, text, expect, show, check, explain, ...extra });
+function numberQ(n) {
+  const w = deNum(n), o = n % 10;
+  const why = n < 20 ? `${w} = ${n}. The ending -zehn means 10 + something: vierzehn = 14, but vierzig = 40.`
+    : o === 0 ? `${w} = ${n}. The ending -zig means a full ten: vierzig = 40, but vierzehn = 14.`
+    : `${w} = ${n}. German says the ones first: ${o === 1 ? "ein" : ONES[o]} + und + ${TENS[Math.floor(n / 10)]}.`;
+  return typed("Hör zu. Welche Zahl hörst du?", "Type the digits.", [["f", w]], w, String(n), String(n), v => v.replace(/\s/g, "") === String(n), why, { mode: "numeric" });
+}
+function priceQ(e, c) {
+  const w = deEuro(e, c), eur = e + "," + String(c).padStart(2, "0");
+  return typed("Wie viel kostet das?", "Type the price in euros, like 2,20.", [["m", w]], w, eur, eur + " €", v => Math.abs(parseFloat(v.replace(",", ".").replace(/[^\d.]/g, "")) - (e + c / 100)) < 0.001, `„${w}“ = ${eur} €. Euros first, then the cents. There is no „und“ in between.`, { mode: "decimal" });
+}
+function phoneQ() {
+  const p = [rnd(10, 99), rnd(10, 99), rnd(10, 99)], d = p.join(""), w = p.map(deNum).join(", ");
+  return typed("Hör zu. Wie ist die Nummer?", "Type the six digits. Phone numbers are read in pairs.", [["m", w]], w, d, p.join(" "), v => v.replace(/\D/g, "") === d, `${w} = ${p.join(" ")}. Each pair is one number: ${deNum(p[0])} = ${p[0]}.`, { mode: "numeric" });
+}
+function timeQ() {
+  const h = rnd(1, 12), m = pick([0, 15, 30, 45]), w = deClock(h, m), mm = String(m).padStart(2, "0");
+  const wrong = { 0: [[h, 30], [h, 15]], 15: [[h, 45], [h + 1, 15]], 30: [[h + 1, 30], [h, 0]], 45: [[h + 1, 15], [h - 1, 45]] }[m];
+  const note = { 0: "", 15: " (a quarter past)", 30: " (half TO the next hour)", 45: " (a quarter TO the next hour)" }[m];
+  return mc("Wie spät ist es?", [[h, m], ...wrong].map(([a, b]) => ({ clock: [face(a), b] })), 0, `„${w.charAt(0).toUpperCase() + w.slice(1)}“ = ${face(h)}:${mm}${note}.`, { audio: [["f", "Es ist " + w + "."]] });
+}
+function spellQ(word) {
+  const L = word.split(""), tricky = [...new Set(L.filter(c => "CEIJQUVWXYZÄÖÜ".includes(c)))];
+  return typed("Hör zu. Die Frau buchstabiert ein Wort. Welches Wort ist es?", "Type the word. You may write ae, oe, ue for ä, ö, ü.", L.map(c => ["f", c]), L.join(" – "), word, word, v => squash(v) === squash(word), L.join(" – ") + (tricky.length ? ". Tricky letters: " + tricky.map(c => `${c} (${LETTER_NAME[c]})`).join(", ") + "." : "."), { gap: 520 });
+}
+function numberItems() {
+  const k = rnd(3, 9), compound = () => { let n; do n = rnd(21, 99); while (n % 10 === 0); return n; };
+  const price = () => priceQ(rnd(1, 19), pick([10, 20, 30, 40, 50, 60, 70, 80, 90]));
+  return shuffle([numberQ(k + 10), numberQ(k * 10), numberQ(compound()), price(), price(), phoneQ(), timeQ(), timeQ()]).map(q => ({ q }));
+}
+function spellItems(n) {
+  const mine = herName().replace(/[^\p{L}]/gu, "").toUpperCase();
+  return shuffle(SPELL_WORDS.concat(mine.length > 2 && mine.length < 13 ? [mine] : [])).slice(0, n).map(w => ({ q: spellQ(w) }));
+}
+function vocabItems(n) {
+  const all = STAGES.flatMap(s => s.words), pool = STAGES.flatMap((s, k) => isDone(k) ? s.words : []);
+  return shuffle(pool).slice(0, n).map(([de, en], k) => {
+    const toEn = k % 2 === 0, right = toEn ? en : de;
+    const wrong = shuffle(all.filter(w => w[0] !== de && w[1] !== en)).slice(0, 2).map(w => toEn ? w[1] : w[0]);
+    const options = shuffle([right, ...wrong]);
+    return { q: mc(toEn ? `Was bedeutet „${de}“?` : `Wie sagt man „${en}“ auf Deutsch?`, options, options.indexOf(right), `${de} = ${en}`, toEn ? { hear: de } : { say: de }) };
+  });
+}
+const mistakeItems = (only, n) => shuffle(missedList().filter(([s]) => only == null || s === only)).slice(0, n).map(([s, k]) => ({ q: STAGES[s].questions[k], stage: s, qi: k, ref: s + ":" + k }));
+
+/* =====================================================================
+   Speech (listening tasks use the phone's own German voice)
+   ===================================================================== */
+const TTS = {
+  ok: typeof window.speechSynthesis !== "undefined" && typeof window.SpeechSynthesisUtterance !== "undefined",
+  de: [], f: null, m: null, token: 0,
+  init() {
+    if (!this.ok) return;
+    const load = () => {
+      try {
+        const vs = speechSynthesis.getVoices() || [];
+        this.de = vs.filter(v => /^de([-_]|$)/i.test(v.lang || ""));
+        const fem = /(anna|petra|helena|katja|marlene|vicki|hedda|female|sabine|elena|amala|seraphina|katharina|ingrid|eva)/i;
+        const mal = /(markus|yannick|conrad|stefan|hans|male|martin|florian|killian|daniel|jonas|viktor|bernd)/i;
+        this.f = this.de.find(v => fem.test(v.name)) || this.de[0] || null;
+        this.m = this.de.find(v => mal.test(v.name) && v !== this.f) || this.de.find(v => v !== this.f) || this.f;
+      } catch (e) {}
+    };
+    load();
+    try { speechSynthesis.addEventListener("voiceschanged", load); } catch (e) { try { speechSynthesis.onvoiceschanged = load; } catch (e2) {} }
+  },
+  speak(lines, cb = {}) {
+    if (!this.ok) { cb.onEnd && cb.onEnd(false); return false; }
+    const busy = (() => { try { return speechSynthesis.speaking || speechSynthesis.pending; } catch (e) { return false; } })();
+    this.stop();
+    const token = ++this.token;
+    let i = 0;
+    const twoVoices = this.f && this.m && this.f !== this.m;
+    const next = () => {
+      if (token !== this.token) return;
+      if (i >= lines.length) { cb.onEnd && cb.onEnd(true); return; }
+      const [who, text, say] = lines[i++];
+      try {
+        const u = new SpeechSynthesisUtterance(fill(say || text));
+        u.lang = "de-DE";
+        const v = who === "m" ? this.m : this.f;
+        if (v) u.voice = v;
+        u.rate = state.settings.rate;
+        u.pitch = who === "m" ? (twoVoices ? 1 : 0.78) : who === "f" ? (twoVoices ? 1.05 : 1.25) : 1;
+        u.onend = () => setTimeout(next, cb.gap || 260);
+        u.onerror = () => { if (token === this.token) cb.onEnd && cb.onEnd(false); };
+        this.keep = u;   // Chrome can lose the end-callback of an utterance nobody references, which would cut a dialogue off after its first line
+        speechSynthesis.speak(u);
+      } catch (e) { cb.onEnd && cb.onEnd(false); }
+    };
+    cb.onStart && cb.onStart();
+    if (busy) setTimeout(next, 90); else next();   // some Android builds swallow a speak() that follows cancel() at once
+    return true;
+  },
+  stop() { if (this.ok) { this.token++; try { speechSynthesis.cancel(); } catch (e) {} } }
+};
+
+/* =====================================================================
+   Drawings
+   ===================================================================== */
+function clockSVG(h, m) {
+  const ha = ((h % 12) + m / 60) * 30 * Math.PI / 180, ma = m * 6 * Math.PI / 180;
+  let ticks = "";
+  for (let i = 0; i < 12; i++) {
+    const a = i * Math.PI / 6, r1 = i % 3 === 0 ? 21 : 24, r2 = 27;
+    ticks += `<line x1="${(32 + Math.sin(a) * r1).toFixed(1)}" y1="${(32 - Math.cos(a) * r1).toFixed(1)}" x2="${(32 + Math.sin(a) * r2).toFixed(1)}" y2="${(32 - Math.cos(a) * r2).toFixed(1)}"/>`;
+  }
+  return `<svg class="clock" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29.5" class="clock-face"/><g class="clock-ticks">${ticks}</g><line class="clock-h" x1="32" y1="32" x2="${(32 + Math.sin(ha) * 14).toFixed(1)}" y2="${(32 - Math.cos(ha) * 14).toFixed(1)}"/><line class="clock-m" x1="32" y1="32" x2="${(32 + Math.sin(ma) * 21).toFixed(1)}" y2="${(32 - Math.cos(ma) * 21).toFixed(1)}"/><circle cx="32" cy="32" r="2.8" class="clock-pin"/></svg>`;
+}
+const PICS = {
+  glass: `<svg viewBox="0 0 80 80" aria-hidden="true"><path class="pw" d="M27.6 38h24.8l-2.6 29.2a3 3 0 0 1-3 2.8H33.2a3 3 0 0 1-3-2.8z"/><path class="pl" d="M24 12h32l-5 55.2a3 3 0 0 1-3 2.8H32a3 3 0 0 1-3-2.8z"/><path class="pl" d="M27.6 38h24.8"/><path class="pl" d="M47 18l-1.2 14" style="stroke:#fff;stroke-width:3"/></svg>`,
+  pencil: `<svg viewBox="0 0 80 80" aria-hidden="true"><g transform="rotate(40 40 40)"><rect class="pf" x="33" y="8" width="14" height="46" rx="2"/><rect x="33" y="8" width="14" height="9" rx="2" fill="#C8476E"/><path class="pf2" d="M33 54l7 16 7-16z"/><path d="M37.6 64.5l2.4 5.5 2.4-5.5z" fill="#57293A"/><path class="pl" d="M33 17h14M33 54h14M40 17v37"/><rect class="pl" x="33" y="8" width="14" height="46" rx="2"/><path class="pl" d="M33 54l7 16 7-16"/></g></svg>`,
+  window: `<svg viewBox="0 0 80 80" aria-hidden="true"><rect class="pw" x="16" y="12" width="40" height="56" rx="3"/><rect class="pl" x="16" y="12" width="40" height="56" rx="3"/><path class="pl" d="M36 12v56M16 40h20"/><path class="pf" d="M36 14l26 8v44l-26 2z"/><path class="pl" d="M36 14l26 8v44l-26 2"/><path class="pl" d="M64 30c5-2 9 2 6 5M66 42c6-1 9 3 5 6M63 54c4 0 6 3 3 5" style="stroke:#86566A;stroke-width:2"/></svg>`,
+  phone: `<svg viewBox="0 0 80 80" aria-hidden="true"><rect class="pf" x="26" y="8" width="28" height="64" rx="6"/><rect x="30" y="16" width="20" height="40" rx="2" fill="#FFF8F5"/><rect class="pl" x="26" y="8" width="28" height="64" rx="6"/><circle class="pl" cx="40" cy="64" r="3"/><path class="pl" d="M36 12h8"/></svg>`,
+  nosmoke: `<svg viewBox="0 0 80 80" aria-hidden="true"><rect x="20" y="37" width="34" height="8" rx="2" fill="#FFF8F5" stroke="#57293A" stroke-width="2.4"/><rect x="48" y="37" width="6" height="8" fill="#F4A27F"/><path d="M58 34c3-3 0-6 3-9" fill="none" stroke="#86566A" stroke-width="2" stroke-linecap="round"/><circle cx="40" cy="41" r="27" fill="none" stroke="#B93B5A" stroke-width="6"/><path d="M21 22l38 38" stroke="#B93B5A" stroke-width="6" stroke-linecap="round"/></svg>`
+};
+const CAT_SVG = `<svg viewBox="0 0 64 58" aria-hidden="true"><path class="tail" d="M46 44c10 0 14-8 10-14" fill="none" stroke="#57293A" stroke-width="2.4" stroke-linecap="round"/><path class="tail" d="M46 44c10 0 14-8 10-14" fill="none" stroke="#FFD6C2" stroke-width="1" stroke-linecap="round" opacity="0"/><ellipse cx="32" cy="44" rx="17" ry="11" fill="#FFE2D3" stroke="#57293A" stroke-width="2.2"/><path d="M14 30l3-12 7 7M40 25l7-7 3 12" fill="#FFE2D3" stroke="#57293A" stroke-width="2.2" stroke-linejoin="round"/><ellipse cx="32" cy="32" rx="17" ry="13" fill="#FFE2D3" stroke="#57293A" stroke-width="2.2"/><path d="M17.5 21l1.5-6 3.5 3.6M46.5 21l-1.5-6-3.5 3.6" fill="#F7B3C8"/><path d="M23 32q3 3 6 0M35 32q3 3 6 0" fill="none" stroke="#57293A" stroke-width="2" stroke-linecap="round"/><path d="M30.5 36.5l1.5 1.4 1.5-1.4" fill="none" stroke="#C8476E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="37" r="2.6" fill="#F7B3C8" opacity=".8"/><circle cx="44" cy="37" r="2.6" fill="#F7B3C8" opacity=".8"/><text x="49" y="14" font-family="Nunito,sans-serif" font-weight="800" font-size="9" fill="#C8476E">z</text><text x="55" y="7" font-family="Nunito,sans-serif" font-weight="800" font-size="7" fill="#C8476E">z</text></svg>`;
+const ENV_STATIC = `<svg viewBox="0 0 220 154" aria-hidden="true"><rect x="2" y="2" width="216" height="150" rx="12" fill="#F6B49C"/><path d="M2 14 110 88 218 14v126a12 12 0 0 1-12 12H14A12 12 0 0 1 2 140z" fill="#FFD9C6"/><path d="M14 2h192a12 12 0 0 1 12 12L110 92 2 14A12 12 0 0 1 14 2z" fill="#FBC2AC"/><use href="#seal" x="80" y="62" width="60" height="60"/><use href="#sakura" x="168" y="104" width="40" height="40" opacity=".9"/><use href="#sakuraPeach" x="150" y="122" width="26" height="26" opacity=".9"/></svg>`;
+const HERO_BRANCH = `<svg class="hero-branch" viewBox="0 0 400 150" aria-hidden="true">
+  <path class="branch-main" d="M-10 30C50 22 90 58 150 52S250 18 300 34 380 70 412 58"/>
+  <path class="branch-hi" d="M-10 27C50 19 90 55 150 49S250 15 300 31"/>
+  <path class="twig" d="M120 54c6 18 18 30 32 38M228 34c-4-14 2-24 14-30M300 36c10 16 26 22 44 22M60 34c-6 14-4 28 4 40"/>
+  <use href="#sakura" x="132" y="70" width="52" height="52"/>
+  <use href="#sakuraPeach" x="220" y="-12" width="44" height="44"/>
+  <use href="#sakura" x="330" y="34" width="50" height="50"/>
+  <use href="#sakura" x="44" y="58" width="40" height="40"/>
+  <use href="#sakuraPeach" x="270" y="44" width="34" height="34"/>
+  <use href="#bud" x="86" y="22" width="34" height="34"/>
+  <use href="#bud" x="176" y="20" width="30" height="30"/>
+  <use href="#sakura" x="8" y="2" width="36" height="36"/>
+  <use href="#bud" x="374" y="20" width="28" height="28"/>
+</svg>`;
+const CLOUD_SVG = `<svg viewBox="0 0 84 48" aria-hidden="true"><path d="M18 42h50a13 13 0 0 0 0-26 18 18 0 0 0-33-6A14 14 0 0 0 18 42z" fill="#fff" stroke="#F2CBD5" stroke-width="2"/><path d="M33 30q3 3 6 0M47 30q3 3 6 0" fill="none" stroke="#C8476E" stroke-width="2" stroke-linecap="round"/><circle cx="30" cy="34" r="2.4" fill="#F7B3C8"/><circle cx="56" cy="34" r="2.4" fill="#F7B3C8"/></svg>`;
+const petalSVG = (fillc) => `<svg viewBox="-30 -46 60 50" aria-hidden="true"><path d="M0 0C-16-8-21-31-8-43L0-36 8-43C21-31 16-8 0 0Z" fill="${fillc}"/></svg>`;
+const PETAL_LETTER_BG = `<svg viewBox="-34 -50 68 54" aria-hidden="true"><path d="M0 2C-20-8-26-35-10-48L0-40 10-48C26-35 20-8 0 2Z" fill="url(#gPetalLetter)" stroke="#E7849F" stroke-width="1.5"/></svg>`;
+
+function starsHTML(n, cls = "stars-sm") {
+  let s = "";
+  for (let i = 0; i < 3; i++) s += `<svg viewBox="0 0 24 24" class="${i < n ? "st-on" : "st-off"}" aria-hidden="true"><use href="#i-star"/></svg>`;
+  return `<span class="${cls}" aria-label="${n} von 3 Sternen">${s}</span>`;
+}
+
+/* =====================================================================
+   Render: shell
+   ===================================================================== */
+const app = $("#app");
+function render(opts = {}) {
+  let h = "";
+  switch (ui.screen) {
+    case "title": h = renderTitle(); break;
+    case "map": h = renderMap(); break;
+    case "stage": h = renderStage(); break;
+    case "finale": h = renderFinale(); break;
+    case "box": h = renderBox(); break;
+    case "pause": h = renderPause(); break;
+    case "practice": h = renderPractice(); break;
+    case "drill": h = renderDrill(); break;
+  }
+  app.innerHTML = `<div class="screen">${h}</div>`;
+  updateHud();
+  if (ui.screen === "map") requestAnimationFrame(drawBranch);
+  if (!opts.keepScroll) window.scrollTo(0, 0);
+}
+function updateHud() {
+  $("#hudPetals span").textContent = state.petals;
+  $("#hudClues span").textContent = countDone() + "/" + N;
+}
+function go(screen, extra = {}) {
+  TTS.stop();
+  closeSheet();
+  Object.assign(ui, { screen }, extra);
+  render();
+}
+
+/* ---------- Title ---------- */
+function renderTitle() {
+  const n = herName();
+  const started = countDone() > 0 || state.cur;
+  return `<section class="title-screen">
+    ${HERO_BRANCH}
+    <button class="cloud" data-action="cloud" aria-label="Eine kleine Wolke">${CLOUD_SVG}</button>
+    ${n ? `<p class="for">für ${esc(n)}</p>` : ""}
+    <h1 class="title"><small>Der</small>Kirschblüten&shy;brief</h1>
+    <p class="lede">Elf Briefe unter einem Kirschbaum. Ein Geheimnis. Und jedes Schloss öffnest du mit Deutsch.</p>
+    <p class="lede-en">Eleven letters under a cherry tree, one secret, and every lock opens with German.</p>
+    ${countdownHTML()}
+    <div class="env-static">${ENV_STATIC}</div>
+    <div class="actions">
+      <button class="btn wide" data-action="${started ? "map" : "start"}">${started ? "Weiterlesen" : "Brief öffnen"}</button>
+      <button class="btn soft" data-action="how">So geht's</button>
+    </div>
+    <p class="foot">Start Deutsch 1 · Hören · Lesen · Schreiben · Sprechen</p>
+  </section>`;
+}
+
+/* ---------- Map ---------- */
+function stageStatus(i) { return isDone(i) ? "done" : unlocked(i) ? "current" : "locked"; }
+function renderMap() {
+  const n = herName(), d = countDone(), missedN = missedList().length;
+  const pct = Math.round(((d + (state.finale ? 1 : 0)) / (N + 1)) * 100);
+  let sub;
+  if (state.finale) sub = "Du hast das Geheimnis gelöst. Die Briefe bleiben hier für dich.";
+  else if (allDone()) sub = "Alle Hinweise gesammelt. Der letzte Brief wartet ganz unten.";
+  else if (d === 0) sub = state.cur ? "Du hast schon angefangen. Mach weiter, wo du warst." : "Der erste Brief hängt oben am Baum.";
+  else sub = `${d} von ${N} Hinweisen gefunden. Ein Brief nach dem anderen.`;
+  let h = `<section class="map-head">
+    <p class="eyebrow">Dein Kirschbaum</p>
+    <h1 class="h1">${n ? `Hallo <em>${esc(n)}</em>!` : "Hallo du!"}</h1>
+    <p class="sub">${sub}</p>
+    ${countdownHTML()}
+    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Fortschritt"><span style="width:${pct}%"></span></div>
+    ${isDone(0) ? `<button class="pcard practice-link${missedN ? " alert" : ""}" data-action="practice"><span class="pi">${icon("i-cards")}</span><span class="pt"><b>Üben</b><span>${missedN ? `${missedN} ${missedN === 1 ? "Aufgabe" : "Aufgaben"} wiederholen · ` : ""}Wörter, Zahlen, Spickzettel</span></span></button>` : ""}
+  </section>
+  <div class="tree" id="tree">
+    <svg class="tree-svg" id="treeSvg" aria-hidden="true"></svg>
+    <button class="cat" id="cat" data-action="secret-cat" aria-label="Eine schlafende Katze">${CAT_SVG}</button>
+    <ol class="rows">`;
+  STAGES.forEach((st, i) => {
+    const s = stageStatus(i);
+    const res = state.done[i];
+    let meta;
+    if (s === "done") meta = `${starsHTML(res.stars)}<span>${res.correct}/${res.total}</span>`;
+    else if (s === "current") meta = state.cur && state.cur.stage === i ? `Weitermachen · Aufgabe ${state.cur.qi + 1}` : "Jetzt öffnen · ca. 3 Min.";
+    else meta = `${icon("i-lock", "ico")}<span>Noch verschlossen</span>`;
+    const node = s === "done" ? flower(i % 2 === 1) : `<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#${s === "current" ? "bud" : "budLocked"}"/></svg>`;
+    h += `<li class="row ${s}"><button class="row-btn" data-action="open-stage" data-i="${i}" ${s === "locked" ? 'aria-disabled="true"' : ""}>
+      <span class="node">${node}</span>
+      <span class="row-card">
+        <span class="row-top"><span class="row-eyebrow">${label(i)}</span><span class="skill skill-${st.skill}">${st.part}</span></span>
+        <span class="row-title">${esc(st.title)}</span>
+        <span class="row-meta">${meta}</span>
+      </span></button></li>`;
+  });
+  const fs = state.finale ? "done" : allDone() ? "current" : "locked";
+  h += `<li class="row ${fs}"><button class="row-btn" data-action="open-finale" ${fs === "locked" ? 'aria-disabled="true"' : ""}>
+      <span class="node">${fs === "done" ? `<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>` : `<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#${fs === "current" ? "seal" : "budLocked"}"/></svg>`}</span>
+      <span class="row-card">
+        <span class="row-top"><span class="row-eyebrow">Brief 11</span><span class="skill skill-finale">Wer bin ich?</span></span>
+        <span class="row-title">Der letzte Brief</span>
+        <span class="row-meta">${fs === "done" ? "Nochmal lesen" : fs === "current" ? "Jetzt öffnen" : `${icon("i-lock", "ico")}<span>Erst alle Hinweise sammeln</span>`}</span>
+      </span></button></li>`;
+  h += `</ol></div>`;
+  return h;
+}
+function drawBranch() {
+  const tree = $("#tree"), svg = $("#treeSvg");
+  if (!tree || !svg) return;
+  const nodes = [...tree.querySelectorAll(".node")];
+  if (!nodes.length) return;
+  const r0 = tree.getBoundingClientRect();
+  const pts = nodes.map(n => { const r = n.getBoundingClientRect(); return [r.left - r0.left + r.width / 2, r.top - r0.top + r.height / 2]; });
+  const H = tree.offsetHeight, W = tree.offsetWidth;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.style.height = H + "px";
+  const cat = $("#cat");
+  if (cat) cat.style.left = (pts[0][0] - 32) + "px";
+  const start = [pts[0][0] + 2, 58];
+  let d = `M${start[0]} ${start[1]} C${start[0] - 14} ${start[1] + 20} ${pts[0][0] + 14} ${pts[0][1] - 30} ${pts[0][0]} ${pts[0][1]}`;
+  let twigs = "", blooms = "";
+  for (let i = 0; i < pts.length - 1; i++) {
+    const [x1, y1] = pts[i], [x2, y2] = pts[i + 1], dy = y2 - y1, sw = (i % 2 ? 1 : -1) * 22;
+    const c1 = [x1 + sw, y1 + dy * .38], c2 = [x2 + sw, y2 - dy * .38];
+    d += ` C${c1[0]} ${c1[1]} ${c2[0]} ${c2[1]} ${x2} ${y2}`;
+    const mx = .125 * x1 + .375 * c1[0] + .375 * c2[0] + .125 * x2, my = .125 * y1 + .375 * c1[1] + .375 * c2[1] + .125 * y2;
+    const dir = sw > 0 ? -1 : 1, ex = mx + dir * 20, ey = my - 12;
+    twigs += `M${mx.toFixed(1)} ${my.toFixed(1)} q${(dir * 8).toFixed(1)} -2 ${(ex - mx).toFixed(1)} ${(ey - my).toFixed(1)} `;
+    const bloomed = isDone(i);
+    const sz = bloomed ? 22 : 18;
+    blooms += `<use href="#${bloomed ? (i % 2 ? "sakura" : "sakuraPeach") : "bud"}" x="${(ex - sz / 2).toFixed(1)}" y="${(ey - sz / 2 - (bloomed ? 0 : 4)).toFixed(1)}" width="${sz}" height="${sz}"/>`;
+  }
+  svg.innerHTML = `<path class="branch-main" d="${d}"/><path class="twig" d="${twigs}"/>${blooms}`;
+}
+
+/* ---------- Stage ---------- */
+function stageTop(i, right) {
+  const st = STAGES[i];
+  return `<div class="stage-top">
+    <button class="icon-btn" data-action="map" aria-label="Zurück zum Baum">${icon("i-back")}</button>
+    <div class="meta"><b>${label(i)} · ${st.part}</b><span>${right}</span></div>
+  </div>`;
+}
+function renderStage() {
+  const i = ui.stage, st = STAGES[i];
+  if (ui.phase === "intro") return renderIntro(i, st);
+  if (ui.phase === "letter") return renderLetter(i, st);
+  if (ui.phase === "reward") return renderReward(i, st);
+  return renderQuestion(i, st);
+}
+function renderIntro(i, st) {
+  return `<section class="intro">
+    <p class="eyebrow">${label(i)} · ${st.part}</p>
+    <h1 class="h1">${esc(st.title)}</h1>
+    <button class="env" id="env" data-action="open-envelope" aria-label="Umschlag öffnen">
+      <span class="env-back"></span><span class="env-paper"></span><span class="env-front"></span><span class="env-flap"></span>
+      <span class="env-seal"><svg viewBox="0 0 100 100"><use href="#seal"/></svg></span>
+    </button>
+    <p class="hint">Tippe auf das Siegel<span>Tap the seal to open</span></p>
+    <div class="actions center"><button class="btn soft" data-action="map">Später</button></div>
+  </section>`;
+}
+function renderLetter(i, st) {
+  return `${stageTop(i, esc(st.title))}
+  <article class="letter">
+    <div class="letter-head"><span class="eyebrow">Ein Brief für dich</span>
+      <button class="chip" data-action="toggle-en" aria-pressed="${ui.showEn}">Übersetzung</button></div>
+    <div class="hand">${paras(st.letter.de)}</div>
+    <div class="sig">– ?</div>
+    ${ui.showEn ? `<p class="en">${txt(st.letter.en)}</p>` : ""}
+    <svg class="pressed" viewBox="0 0 100 100" aria-hidden="true"><use href="#sakuraPeach"/></svg>
+  </article>
+  <details class="tip"><summary><span class="tip-ico">${icon("i-bulb")}</span>Prüfungstipp · ${st.part}</summary><p>${esc(st.tip)}</p></details>
+  <div class="actions"><button class="btn wide" data-action="start-q">Los geht's</button></div>`;
+}
+
+function renderCtx(c) {
+  if (c.kind === "mail") return `<div class="ctx mail"><div class="mail-bar"><span class="dots"><i></i><i></i><i></i></span><span>Betreff: ${esc(c.subject)}</span></div><div class="mail-body">${paras(c.body)}</div></div>`;
+  if (c.kind === "menu") return `<div class="ctx menu"><h3>${esc(c.title)}</h3><p class="small">${esc(c.lines[0])}</p>${c.lines.slice(1).map(l => `<p>${esc(l)}</p>`).join("")}</div>`;
+  if (c.kind === "sign") return `<figure class="ctx sign"><figcaption>${esc(c.where.split(" ")[0])} <b>${esc(c.where.split(" ").slice(1).join(" "))}</b></figcaption><div class="board" style="--tilt:${c.tilt || 0}deg"><h3>${esc(c.title)}</h3>${c.lines.map(l => `<p>${esc(l)}</p>`).join("")}</div></figure>`;
+  if (c.kind === "topic") return `<div class="ctx examcard"><div class="ec-head"><span>Start Deutsch 1</span><span>Sprechen Teil 2</span></div><div class="ec-theme">Thema: ${esc(c.theme)}</div><div class="ec-word">${esc(c.word)}</div></div>`;
+  if (c.kind === "pic") return `<div class="ctx examcard"><div class="ec-head"><span>Start Deutsch 1</span><span>Sprechen Teil 3</span></div><div class="ec-pic">${PICS[c.pic]}</div></div>`;
+  return "";
+}
+function renderAudio(q, st) {
+  const plays = st && (st.plays || 2);
+  const lines = q.text ? `<p>${esc(fill(q.text))}</p>` : q.audio.map(([who, t]) => `<p><span class="who">${who === "m" ? "Mann" : who === "f" ? "Frau" : "Durchsage"}</span>${esc(fill(t))}</p>`).join("");
+  const noDe = TTS.ok && TTS.de.length === 0;
+  return `<div class="listen">
+    <button class="play" id="playBtn" data-action="play"><span class="disc">${icon("i-speaker")}</span><span class="bars"><i></i><i></i><i></i><i></i></span><span>${ui.plays ? "Nochmal hören" : "Anhören"}</span></button>
+    <div class="listen-meta">${plays ? `In der Prüfung: <b>${plays}×</b><br>` : ""}<span id="playCount">${ui.plays}× gehört</span></div>
+    ${!TTS.ok ? `<p class="voice-note">This browser can't play speech. Read the text instead.</p>` : noDe ? `<p class="voice-note">No German voice found on this phone, so it may sound English. The settings (top right) show how to add one, or just read the text.</p>` : ""}
+    ${ui.answered ? "" : `<button class="link" data-action="show-transcript">${ui.showT ? "Text verstecken" : "Kein Ton? Text lesen"}</button>`}
+    ${ui.showT || ui.answered ? `<div class="transcript">${lines}</div>` : ""}
+  </div>`;
+}
+function optionInner(o, letterIdx) {
+  const L = "abc"[letterIdx];
+  if (typeof o === "string") return { cls: "", html: `<span class="badge">${L}</span><span>${esc(fill(o))}</span>` };
+  if (o.clock) { const [h, m] = o.clock; return { cls: "clock-opt", html: `${clockSVG(h, m)}<span class="clock-lbl"><span class="sr">${L}: </span>${h}:${String(m).padStart(2, "0")}</span>` }; }
+  if (o.web) return { cls: "web-opt", html: `<span class="web-row"><span class="badge">${L}</span><span>${esc(o.web.url)}</span></span><span class="web"><span class="web-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">${esc(o.web.url)}</span></span><span class="web-body" style="display:block"><b>${esc(o.web.title)}</b>${o.web.lines.map(l => esc(l)).join("<br>")}</span></span>` };
+  if (o.train) return { cls: "web-opt", html: `<span class="web-row"><span class="badge">${L}</span><span>www.reiseauskunft.bahn.de</span></span><table class="train"><tr><th></th><th>Bahnhof</th><th>Zeit</th></tr>${o.train.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("")}</table>` };
+  return { cls: "", html: "" };
+}
+function renderQuestion(i, st) {
+  const q = st.questions[ui.qi], total = st.questions.length;
+  let h = stageTop(i, total > 1 ? `Aufgabe ${ui.qi + 1} von ${total}` : esc(st.title));
+  if (total > 1) h += `<div class="qdots" aria-hidden="true">${st.questions.map((_, k) => `<i class="${k < ui.qi || (k === ui.qi && ui.answered) ? "on" : k === ui.qi ? "now" : ""}"></i>`).join("")}</div>`;
+  h += `<section class="qcard card">`;
+  if (q.ctx) h += renderCtx(q.ctx);
+  if (q.audio) h += renderAudio(q, st);
+  if (q.type === "input") h += renderInputQ(q);
+  else if (q.type === "form") h += renderFormQ(q);
+  else if (q.type === "write") h += renderWriteQ(q);
+  else h += renderChoiceQ(q, i);
+  h += `</section>`;
+  return h;
+}
+function renderChoiceQ(q, i) {
+  let h = "";
+  if (q.type === "tf") {
+    h += `<p class="prompt">${esc(fill(q.statement))}</p><p class="prompt-sub">Richtig oder falsch?</p>`;
+    const opts = [[1, "Richtig"], [0, "Falsch"]];
+    h += `<div class="opts tf">${opts.map(([v, l]) => {
+      let cls = "";
+      if (ui.answered) { const right = (v === 1) === q.answer; if (right) cls = "is-right"; else if (ui.picked === v) cls = "is-wrong"; else cls = "dim"; }
+      return `<button class="opt ${cls}" data-action="pick" data-v="${v}" ${ui.answered ? "disabled" : ""}>${l}</button>`;
+    }).join("")}</div>`;
+  } else {
+    h += `<p class="prompt">${esc(fill(q.prompt))}</p>`;
+    if (q.hear) h += `<p class="hear-row"><button class="chip" data-action="say" data-say="${esc(q.hear)}">${icon("i-speaker", "ico")} Anhören</button></p>`;
+    if (q.sentence) h += `<p class="sentence">${esc(fill(q.sentence)).replace("___", '<span class="blank">?</span>')}</p>`;
+    const order = shuffleSeed(q.options.map((_, k) => k), (i + 1) * 977 + ui.qi * 131 + 7);
+    const grid = q.options[0] && q.options[0].clock ? "grid3" : "";
+    h += `<div class="opts ${grid}">${order.map((k, pos) => {
+      const inner = optionInner(q.options[k], pos);
+      let cls = inner.cls;
+      if (ui.answered) { if (k === q.answer) cls += " is-right"; else if (ui.picked === k) cls += " is-wrong"; else cls += " dim"; }
+      return `<button class="opt ${cls}" data-action="pick" data-v="${k}" ${ui.answered ? "disabled" : ""}>${inner.html}</button>`;
+    }).join("")}</div>`;
+  }
+  if (ui.answered) h += feedbackHTML(ui.lastOk, q.explain);
+  return h;
+}
+/* the German sentence she should say out loud after a speaking task (or a vocabulary card) */
+function sayLine(q) {
+  if (q.say !== undefined) return fill(q.say);
+  const st = activeStage();
+  if (!st || st.skill !== "sprechen" || q.type !== "mc" || typeof q.options[q.answer] !== "string") return "";
+  const a = fill(q.options[q.answer]);
+  return q.sentence ? fill(q.sentence).replace("___", a) : a;
+}
+function feedbackHTML(ok, explain, extra = "") {
+  const w = ui.fbWord || (ok ? OK_WORDS[0] : BAD_WORDS[0]);
+  const last = inDrill() ? ui.drill.pos >= ui.drill.items.length - 1 : ui.qi >= STAGES[ui.stage].questions.length - 1;
+  const line = sayLine(curQ());
+  return `<div class="feedback ${ok ? "ok" : "bad"}" id="fb" role="status">
+    <p class="fb-title"><strong>${w[0]}</strong><span>${w[1]}</span></p>
+    ${explain ? `<p class="fb-explain">${esc(fill(explain))}</p>` : ""}${extra}
+    ${line ? `<p class="say-row"><button class="chip" data-action="say" data-say="${esc(line)}">${icon("i-speaker", "ico")} Anhören</button><span>Jetzt laut nachsprechen!</span></p>` : ""}
+    <button class="btn" data-action="next-q" id="nextBtn">${last ? (inDrill() ? "Fertig" : "Brief öffnen") : "Weiter"}</button>
+  </div>`;
+}
+function renderInputQ(q) {
+  const n = herName();
+  if (ui.answered) {
+    return `<p class="prompt">${esc(q.prompt)}</p><p class="sentence">Ich heiße <b>${esc(n)}</b>.</p>${feedbackHTML(true, q.explain)}`;
+  }
+  return `<p class="prompt">${esc(q.prompt)}</p>
+  <form class="field-row" id="nameForm" data-form="name">
+    <label for="herName">Ich heiße</label>
+    <input class="txt" id="herName" name="herName" maxlength="24" autocomplete="given-name" placeholder="dein Name" value="${esc(state.herName)}">
+    <button class="btn" type="submit">Fertig</button>
+  </form>
+  <p class="err" id="nameErr" hidden>Schreib deinen Namen, bitte. · Type your name first.</p>`;
+}
+function renderFormQ(q) {
+  const t = q.task;
+  let h = `<div class="task"><p>${esc(t.de)}</p><p class="en">${esc(t.en)}</p></div>
+  <div class="form-sheet"><h3>Kirschblütenfest</h3><p class="fs-sub">Anmeldung</p>`;
+  q.fields.forEach(f => {
+    if (f.given) { h += `<div class="frow"><span class="lbl">${esc(f.label)}</span><span class="given">${esc(f.given)}</span></div>`; return; }
+    const v = ui.form[f.id] || "";
+    const okv = ui.formChecked ? f.test(v.trim()) : null;
+    const st = ui.formChecked ? (okv ? "ok" : "bad") : "";
+    let field;
+    if (f.radio) {
+      field = `<span class="radios" role="radiogroup" aria-label="${esc(f.label)}">${f.radio.map(r => `<label class="${ui.formChecked && v === r ? st : ""}"><input type="radio" name="${f.id}" value="${esc(r)}" ${v === r ? "checked" : ""} ${ui.formChecked ? "disabled" : ""} data-field="${f.id}">${esc(r)}</label>`).join("")}</span>`;
+    } else {
+      const inp = `<input class="txt ${st}" id="${f.id}" data-field="${f.id}" value="${esc(v)}" autocomplete="off" ${ui.formChecked ? "disabled" : ""}>`;
+      field = f.prefix ? `<span class="inline"><span class="given">${esc(f.prefix)}</span>${inp}</span>` : inp;
+    }
+    h += `<div class="frow">${f.radio ? `<span class="lbl">${esc(f.label)}</span>` : `<label for="${f.id}">${esc(f.label)}</label>`}${field}<span class="num">(${f.n})</span>
+      ${ui.formChecked ? `<p class="sol ${st}">${okv ? "Richtig" : "Lösung: " + esc(f.sol)} · ${esc(f.why)}</p>` : ""}</div>`;
+  });
+  h += `</div>`;
+  if (!ui.formChecked) h += `<div class="actions"><button class="btn wide" data-action="check-form">Prüfen</button></div>`;
+  else {
+    const n = q.fields.filter(f => !f.given && f.test((ui.form[f.id] || "").trim())).length;
+    h += feedbackHTML(n >= 4, `${n} von 5 richtig. In the exam each gap is worth one point, and spelling a town name exactly from the text matters.`);
+  }
+  return h;
+}
+const WRITE_CHECKS = [
+  ["anrede", "Anrede", t => /^\s*(liebe|lieber|hallo|hi|hey|sehr geehrte|guten tag|servus|moin)\b/i.test(t)],
+  ["gruss", "Gruß", t => { const L = t.trim().split("\n"); return /(grüße|gruß|bis (bald|dann|morgen)|tschüss|ciao|auf wiedersehen|\blg\b|\bvg\b)/i.test(L.slice(-2).join(" ")) || /^\s*deine?\s+\p{L}+\s*$/iu.test(L[L.length - 1]); }],
+  ["words", "ca. 30 Wörter", t => wordCount(t) >= 25],
+  ["frage", "Eine Frage (?)", t => /\?/.test(t)]
+];
+function wordCount(t) { const m = String(t).match(/[\p{L}\p{N}]+(?:['’-][\p{L}\p{N}]+)*/gu); return m ? m.length : 0; }
+function checksHTML(t) {
+  return WRITE_CHECKS.map(([k, l, f]) => `<span class="${f(t) ? "on" : ""}" data-check="${k}">${icon("i-check", "ico")}${l}</span>`).join("");
+}
+function renderWriteQ(q) {
+  const t = q.task, draft = state.draft || "";
+  let h = `<div class="task"><p>${esc(t.de)}</p><ul>${t.points.map(p => `<li>${esc(p)}</li>`).join("")}</ul><p>${esc(t.de2)}</p><p class="en">${esc(t.en)}</p></div>
+  <label class="sr" for="letterTxt">Dein Brief</label>
+  <textarea class="txt" id="letterTxt" placeholder="Lieber Briefschreiber, …" ${ui.writeChecked ? "readonly" : ""} style="margin-top:14px">${esc(draft)}</textarea>
+  <div class="wc"><span id="wcNum">${wordCount(draft)} Wörter</span><span>Nur du siehst diesen Text.</span></div>
+  <div class="checks" id="checks">${checksHTML(draft)}</div>`;
+  if (!ui.writeChecked) {
+    h += `<div class="selfcheck"><h4>Alle Punkte dabei?</h4>${t.points.map((p, k) => `<label class="chk"><input type="checkbox" data-pt="${k}" ${ui.pts[k] ? "checked" : ""}>${esc(p)}</label>`).join("")}</div>
+    <div class="actions"><button class="btn wide" data-action="check-write" id="writeBtn" ${wordCount(draft) < 8 ? "disabled" : ""}>Fertig</button></div>`;
+  } else {
+    const passed = WRITE_CHECKS.filter(c => c[2](draft)).length;
+    const allPts = t.points.every((_, k) => ui.pts[k]);
+    const extra = `<div class="scoring"><h4>So wird bewertet</h4><p>In the exam, graders check three things: did you cover every point, can the reader understand you, and did you use a greeting and a sign-off. Perfect grammar isn't required, but a missing point costs marks.</p></div>
+      <article class="letter" style="margin-top:14px"><div class="letter-head"><span class="eyebrow">Beispiel · Model answer</span></div><div class="hand">${paras(q.model)}</div></article>
+      <ul class="parts">${q.parts.map(([k, s]) => `<li><b>${esc(k)}</b>${esc(fill(s))}</li>`).join("")}</ul>
+      <div class="actions"><button class="btn soft" data-action="copy-letter">${icon("i-copy")}Meinen Text kopieren</button></div>`;
+    h += feedbackHTML(passed >= 3, `${passed} von 4 Checks erfüllt.${allPts ? "" : " You didn't tick every point. In the exam, give each point its own sentence."} Want to actually send it to him? Copy your text below. Totally up to you.`, extra);
+  }
+  return h;
+}
+
+/* ---------- Reward ---------- */
+function renderReward(i, st) {
+  const r = ui.reward || { stars: (state.done[i] || {}).stars || 1, correct: (state.done[i] || {}).correct || 0, total: stageTotal(st), gained: 0 };
+  const clue = clueList()[i];
+  const letter = letterPlan()[i];
+  const enc = CONFIG.encouragements[(i * 5 + 3) % CONFIG.encouragements.length];
+  const nextI = i + 1;
+  const d = countDone();
+  const showBreak = r.firstTime && d % 3 === 0 && d < N;
+  const miss = missedList().filter(([s]) => s === i).length;
+  return `<section class="reward">
+    <div class="bloom">${flower(i % 2 === 1)}</div>
+    <p class="eyebrow">${label(i)} · geschafft</p>
+    <h1 class="h1">${r.stars === 3 ? "Wunderbar!" : r.stars === 2 ? "Sehr schön!" : "Geschafft!"}</h1>
+    <div class="stars" aria-label="${r.stars} von 3 Sternen">${[0, 1, 2].map(k => `<svg viewBox="0 0 24 24" class="${k < r.stars ? "st-on" : "st-off"}" aria-hidden="true"><use href="#i-star"/></svg>`).join("")}</div>
+    <p class="score">${r.correct} von ${r.total} richtig${r.gained ? ` · +${r.gained} Blütenblätter` : ""}</p>
+    <article class="letter">
+      <div class="letter-head"><span class="eyebrow">Was passiert?</span><button class="chip" data-action="toggle-en" aria-pressed="${ui.showEn}">Übersetzung</button></div>
+      <div class="hand">${paras(st.outro.de)}</div>
+      ${ui.showEn ? `<p class="en">${txt(st.outro.en)}</p>` : ""}
+    </article>
+    <div class="clue">
+      <svg class="corner" viewBox="0 0 100 100" aria-hidden="true"><use href="#sakura"/></svg>
+      <p class="eyebrow">${icon("i-spark")}Hinweis ${i + 1} von ${N}</p>
+      <p class="clue-de">${esc(fill(clue.de))}</p>
+      <p class="en">${esc(fill(clue.en))}</p>
+    </div>
+    ${letter ? `<div class="petal-letter"><div class="pl-big">${PETAL_LETTER_BG}<b>${esc(letter)}</b></div><p>Ein Blütenblatt mit einem Buchstaben!<span>A petal with a letter on it. Keep it, you'll need it for the last letter.</span></p></div>` : ""}
+    <div class="newwords"><p class="eyebrow">Neue Wörter</p><div class="nw-list">${st.words.map(([de, en]) => `<button class="nw" data-action="say" data-say="${esc(de)}"><b>${esc(de)}</b><span>${esc(en)}</span>${icon("i-speaker", "ico")}</button>`).join("")}</div></div>
+    ${miss ? `<div class="break"><h3>Nochmal versuchen?</h3><p>You missed ${miss} ${miss === 1 ? "question" : "questions"} in this letter. Try ${miss === 1 ? "it" : "them"} again now: that's how answers stick.</p><div class="actions"><button class="btn soft" data-action="drill-mistakes" data-stage="${i}">Fehler üben</button></div></div>` : ""}
+    <p class="encourage">${esc(enc.de)}<span>${esc(enc.en)}</span></p>
+    ${showBreak ? `<div class="break"><h3>Lernpause?</h3><p>You've opened ${d} letters. The tree will wait, and your progress is saved. Maybe stretch, drink a glass of water, and go back to your notes for a bit?</p><div class="actions"><button class="btn soft" data-action="pause">Pause machen</button></div></div>` : ""}
+    <div class="actions">
+      ${nextI < N ? `<button class="btn wide" data-action="open-stage" data-i="${nextI}">Nächster Brief</button>` : `<button class="btn wide" data-action="open-finale">Zum letzten Brief</button>`}
+      <button class="btn soft" data-action="map">Zum Baum</button>
+    </div>
+  </section>`;
+}
+function renderPause() {
+  return `<section class="pause-screen">
+    <div class="bloom">${flower(true)}</div>
+    <h1 class="h1">Bis später!</h1>
+    <p class="sub">Viel Erfolg beim Lernen. The next letter will be right here when you come back.</p>
+    <p class="encourage">Du schaffst das.<span>You've got this.</span></p>
+    <div class="actions center"><button class="btn" data-action="map">Ich bin zurück</button></div>
+  </section>`;
+}
+
+/* ---------- Finale ---------- */
+function renderFinale() {
+  if (state.finale && !ui.fin.opening) return renderReveal();
+  const letters = scrambled();
+  const L = nameLetters();
+  const slots = ui.fin.slots;
+  const clues = clueList();
+  const tips = ui.fin.tries >= 2 ? `<p class="sub" style="text-align:center;margin-top:6px">Tipp: Der Name beginnt mit „${esc(L.slice(0, Math.min(ui.fin.tries - 1, L.length - 1)).join(""))}…“</p>` : "";
+  return `<div class="stage-top"><button class="icon-btn" data-action="map" aria-label="Zurück zum Baum">${icon("i-back")}</button><div class="meta"><b>Brief 11 · Wer bin ich?</b><span>Der letzte Brief</span></div></div>
+  <section style="text-align:center">
+    <div class="env-static" style="margin-top:6px">${ENV_STATIC}</div>
+    <h1 class="h1">Der letzte Brief</h1>
+    <p class="sub">Auf dem Umschlag steht: <b>„Buchstabiere meinen Namen.“</b><br>On the envelope it says: “Spell my name.” Tap the petals in the right order.</p>
+  </section>
+  <details class="fin-clues"><summary>Deine Hinweise (${clues.length})</summary><ol>${clues.map(c => `<li>${esc(fill(c.de))}<span>${esc(fill(c.en))}</span></li>`).join("")}</ol></details>
+  <div class="slots" id="slots">${L.map((_, k) => `<button class="slot ${slots[k] != null ? "filled" : ""}" data-action="slot" data-k="${k}" aria-label="Feld ${k + 1}">${slots[k] != null ? esc(letters[slots[k]]) : ""}</button>`).join("")}</div>
+  <div class="pletters">${letters.map((ch, k) => `<button class="pbtn" data-action="petal" data-k="${k}" ${slots.includes(k) ? "disabled" : ""} aria-label="Buchstabe ${esc(ch)}">${PETAL_LETTER_BG}<b>${esc(ch)}</b></button>`).join("")}</div>
+  <p class="fin-msg" id="finMsg" role="status"></p>
+  ${tips}`;
+}
+function renderReveal() {
+  const fl = CONFIG.finalLetter;
+  const stars = Object.values(state.done).reduce((a, r) => a + (r.stars || 0), 0);
+  return `<section class="reveal">
+    <div class="bloom">${flower(false)}</div>
+    <p class="eyebrow">Das Geheimnis</p>
+    <h1 class="reveal-name">Ich bin’s:<span>${esc(CONFIG.senderName)}</span></h1>
+    <article class="letter">
+      <div class="hand"><p>${esc(fill(fl.greeting))}</p>${fl.paragraphs.map(p => `<p>${esc(fill(p))}</p>`).join("")}</div>
+      <div class="sig">${esc(fill(fl.closing))}</div>
+      <svg class="pressed" viewBox="0 0 100 100" aria-hidden="true"><use href="#sakura"/></svg>
+    </article>
+    <aside class="bonus">
+      <p class="eyebrow">Ein letzter Satz</p>
+      <p class="bonus-de">„${esc(CONFIG.bonus.de)}“</p>
+      <p class="en">${esc(CONFIG.bonus.en)}</p>
+      <button class="chip" data-action="say" data-say="${esc(CONFIG.bonus.de)}">${icon("i-speaker", "ico")} Anhören</button>
+      <p class="note">${esc(CONFIG.bonus.note)}</p>
+    </aside>
+    <div class="stats">
+      <div class="stat"><b>${state.petals}</b><span>Blüten</span></div>
+      <div class="stat"><b>${stars}/${N * 3}</b><span>Sterne</span></div>
+      <div class="stat"><b>${state.secrets.length}/3</b><span>Geheimnisse</span></div>
+    </div>
+    <div class="practised">Du hast alle Teile von Start Deutsch 1 geübt:
+      <div class="skills"><span class="skill skill-hoeren">Hören · Teil 1–3</span><span class="skill skill-lesen">Lesen · Teil 1–3</span><span class="skill skill-schreiben">Schreiben · Teil 1–2</span><span class="skill skill-sprechen">Sprechen · Teil 1–3</span></div>
+    </div>
+    <div class="actions center"><button class="btn" data-action="map">Zum Baum</button><button class="btn soft" data-action="practice">Üben</button><button class="btn soft" data-action="box">Meine Wörter</button></div>
+  </section>`;
+}
+
+/* ---------- Cheat sheet (Spickzettel) ---------- */
+const CHEAT = [
+  { t: "Sich vorstellen", h: `<ul>
+    <li><b>Ich heiße</b> {name}. · <b>Mein Name ist</b> {name}.</li>
+    <li>Ich <b>komme aus</b> {country}. · Ich <b>wohne in</b> Köln.</li>
+    <li>Ich <b>bin</b> zwanzig Jahre <b>alt</b>. <span class="en">Not „Ich habe zwanzig Jahre“.</span></li>
+    <li>Ich bin Studentin. · Ich bin Lehrerin. · Ich bin Ärztin.</li>
+    <li>Ich spreche Englisch und ein bisschen Deutsch.</li>
+    <li>Mein Hobby ist Musik. · Ich spiele gern Videospiele.</li></ul>` },
+  { t: "Verben im Präsens", h: `<div class="scrollx"><table class="mini"><tr><th></th><th>sein</th><th>haben</th><th>kommen</th><th>sprechen</th></tr>
+    <tr><td>ich</td><td>bin</td><td>habe</td><td>komme</td><td>spreche</td></tr>
+    <tr><td>du</td><td>bist</td><td>hast</td><td>kommst</td><td>sprichst</td></tr>
+    <tr><td>er/sie/es</td><td>ist</td><td>hat</td><td>kommt</td><td>spricht</td></tr>
+    <tr><td>wir</td><td>sind</td><td>haben</td><td>kommen</td><td>sprechen</td></tr>
+    <tr><td>ihr</td><td>seid</td><td>habt</td><td>kommt</td><td>sprecht</td></tr>
+    <tr><td>sie/Sie</td><td>sind</td><td>haben</td><td>kommen</td><td>sprechen</td></tr></table></div>
+    <p>Regular verbs: stem + <b>-e, -st, -t, -en, -t, -en</b>. Example: wohnen → ich wohne, du wohnst, er wohnt.</p>
+    <div class="scrollx"><table class="mini"><tr><th></th><th>können</th><th>möchten</th><th>müssen</th></tr>
+    <tr><td>ich</td><td>kann</td><td>möchte</td><td>muss</td></tr>
+    <tr><td>du</td><td>kannst</td><td>möchtest</td><td>musst</td></tr>
+    <tr><td>er/sie/es</td><td>kann</td><td>möchte</td><td>muss</td></tr>
+    <tr><td>wir</td><td>können</td><td>möchten</td><td>müssen</td></tr>
+    <tr><td>ihr</td><td>könnt</td><td>möchtet</td><td>müsst</td></tr>
+    <tr><td>sie/Sie</td><td>können</td><td>möchten</td><td>müssen</td></tr></table></div>` },
+  { t: "Wortstellung", h: `<ul>
+    <li><b>Aussage:</b> the verb is in position 2. „Ich <b>lerne</b> heute Deutsch.“ · „Heute <b>lerne</b> ich Deutsch.“</li>
+    <li><b>W-Frage:</b> question word, then the verb. „Wo <b>wohnst</b> du?“ · „Was <b>kostet</b> der Tee?“</li>
+    <li><b>Ja/Nein-Frage:</b> the verb comes first. „<b>Sprichst</b> du Deutsch?“</li>
+    <li><b>Modalverb:</b> the second verb goes to the end. „Ich <b>kann</b> heute nicht <b>kommen</b>.“ · „<b>Kannst</b> du bitte das Fenster <b>zumachen</b>?“</li>
+    <li><b>Trennbare Verben</b> split up: „Ich <b>mache</b> das Fenster <b>zu</b>.“ · „Ich <b>bringe</b> eine Jacke <b>mit</b>.“</li></ul>` },
+  { t: "Artikel & Akkusativ", h: `<div class="scrollx"><table class="mini"><tr><th></th><th>Nominativ</th><th>Akkusativ</th></tr>
+    <tr><td>der (m)</td><td>der · ein · kein Stift</td><td><b>den · einen · keinen</b> Stift</td></tr>
+    <tr><td>die (f)</td><td>die · eine · keine Jacke</td><td>die · eine · keine Jacke</td></tr>
+    <tr><td>das (n)</td><td>das · ein · kein Buch</td><td>das · ein · kein Buch</td></tr>
+    <tr><td>die (pl)</td><td>die · – · keine Schuhe</td><td>die · – · keine Schuhe</td></tr></table></div>
+    <p>Only the masculine changes: <b>der → den, ein → einen, kein → keinen</b>. Use the accusative after haben, brauchen, möchten, kaufen, essen, trinken.</p>
+    <p>„Ich habe <b>einen</b> Stift.“ · „Ich brauche <b>eine</b> Jacke.“ · „Ich habe <b>keine</b> Kreditkarte.“</p>` },
+  { t: "Fragewörter", h: `<div class="scrollx"><table class="mini">
+    <tr><td>Wer?</td><td>who</td><td>Wer ist das?</td></tr>
+    <tr><td>Was?</td><td>what</td><td>Was kostet das?</td></tr>
+    <tr><td>Wo?</td><td>where</td><td>Wo wohnst du?</td></tr>
+    <tr><td>Woher?</td><td>where from</td><td>Woher kommst du?</td></tr>
+    <tr><td>Wohin?</td><td>where to</td><td>Wohin gehst du?</td></tr>
+    <tr><td>Wann?</td><td>when</td><td>Wann kommt der Zug?</td></tr>
+    <tr><td>Wie?</td><td>how</td><td>Wie alt bist du?</td></tr>
+    <tr><td>Wie viel?</td><td>how much</td><td>Wie viel kostet das?</td></tr>
+    <tr><td>Wie viele?</td><td>how many</td><td>Wie viele Personen?</td></tr>
+    <tr><td>Warum?</td><td>why</td><td>Warum lernst du Deutsch?</td></tr></table></div>` },
+  { t: "Zahlen", h: `<p>0 null · 1 eins · 2 zwei · 3 drei · 4 vier · 5 fünf · 6 sechs · 7 sieben · 8 acht · 9 neun · 10 zehn · 11 elf · 12 zwölf</p>
+    <p>13 dreizehn · 14 vierzehn · 15 fünfzehn · 16 sechzehn · 17 siebzehn · 18 achtzehn · 19 neunzehn</p>
+    <p>20 zwanzig · 30 dreißig · 40 vierzig · 50 fünfzig · 60 sechzig · 70 siebzig · 80 achtzig · 90 neunzig · 100 hundert</p>
+    <ul><li>The ones come first: <b>21 = einundzwanzig</b> (ein-und-zwanzig), 34 = vierunddreißig.</li>
+    <li><b>-zehn</b> or <b>-zig</b>? vierzehn = 14, but vierzig = 40. Listen to the end of the word.</li>
+    <li>sechzehn, siebzehn, sechzig and siebzig lose letters. It is not „sechszehn“ or „siebenzehn“.</li>
+    <li>Prices: 2,20 € = „zwei Euro zwanzig“.</li>
+    <li>Phone numbers are read in pairs: 34 58 21 = „vierunddreißig, achtundfünfzig, einundzwanzig“.</li></ul>` },
+  { t: "Uhrzeit & Datum", h: `<div class="scrollx"><table class="mini"><tr><th></th><th>Alltag</th><th>Offiziell (24 h)</th></tr>
+    <tr><td>15:00</td><td>drei Uhr</td><td>fünfzehn Uhr</td></tr>
+    <tr><td>15:15</td><td>Viertel nach drei</td><td>fünfzehn Uhr fünfzehn</td></tr>
+    <tr><td>15:30</td><td><b>halb vier</b></td><td>fünfzehn Uhr dreißig</td></tr>
+    <tr><td>15:45</td><td>Viertel vor vier</td><td>fünfzehn Uhr fünfundvierzig</td></tr></table></div>
+    <p><b>halb vier = 3:30.</b> German counts toward the next hour. · um 4 Uhr (at) · von 9 bis 18 Uhr (from … to) · ab 16 Uhr (from) · bis 14 Uhr (until)</p>
+    <p><b>Wochentage:</b> Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag, Sonntag. „am Montag“ = on Monday, „montags“ = every Monday.</p>
+    <p><b>Monate:</b> Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember. „im Mai“ = in May.</p>
+    <p><b>Datum:</b> „am 12. April“ is said „am zwölften April“. 1. erste · 2. zweite · 3. dritte · 7. siebte · 12. zwölfte · 20. zwanzigste. Up to 19 add -te, from 20 add -ste.</p>` },
+  { t: "Höflich fragen & reagieren", h: `<ul>
+    <li><b>Kann ich bitte … haben?</b> · <b>Kannst du bitte …?</b> · <b>Haben Sie …?</b> · <b>Ich möchte …, bitte.</b></li>
+    <li>Reacting: „Ja, natürlich. Bitte.“ · „Ja, klar.“ · „Gern.“ · „Tut mir leid, das geht nicht.“</li>
+    <li>Asking the way or the price: „Entschuldigung, wo ist …?“ · „Was kostet das?“</li>
+    <li><b>Lifesavers:</b> „Wie bitte?“ · „Noch einmal, bitte.“ · „Langsamer, bitte.“ · „Ich verstehe nicht.“ · „Wie schreibt man das?“</li>
+    <li><b>du</b> for friends, family and other learners · <b>Sie</b> for strangers and officials.</li></ul>` },
+  { t: "Schreiben: Brief & E-Mail", h: `<ul>
+    <li><b>Anrede:</b> Liebe Anna, · Lieber Tom, · Hallo Anna, <span class="en">Formal: Sehr geehrte Frau Weber, · Sehr geehrter Herr Weber,</span></li>
+    <li><b>Gruß:</b> Viele Grüße · Liebe Grüße · Bis bald! <span class="en">Formal: Mit freundlichen Grüßen</span></li>
+    <li><b>Useful:</b> Ich schreibe dir, weil … · Kannst du bitte …? · Hast du Zeit? · Vielen Dank für … · Ich freue mich auf …</li>
+    <li>Cover <b>every</b> point with one or two simple sentences. Nouns start with a capital letter.</li></ul>` }
+];
+
+/* ---------- Box ---------- */
+function renderBox() {
+  const tabs = [["clues", "Hinweise"], ["words", "Wörter"], ["cheat", "Spickzettel"], ["secrets", "Geheimnisse"], ["exam", "Prüfung"]];
+  let h = `<div class="stage-top"><button class="icon-btn" data-action="back-from-box" aria-label="Zurück">${icon("i-back")}</button><div class="meta"><b>Schatzkiste</b><span>Everything you've collected</span></div></div>
+  <h1 class="h1">Deine <em>Schatzkiste</em></h1>
+  <div class="tabs" role="tablist">${tabs.map(([k, l]) => `<button class="tab" role="tab" aria-selected="${ui.boxTab === k}" data-action="tab" data-tab="${k}">${l}</button>`).join("")}</div>`;
+  if (ui.boxTab === "clues") {
+    const clues = clueList(), plan = letterPlan();
+    const got = Object.keys(plan).filter(k => isDone(+k)).map(k => plan[k]);
+    const total = Math.min(nameLetters().length, N);
+    h += `<div class="item"><p class="eyebrow">Gesammelte Buchstaben</p><div class="collected">${Array.from({ length: total }, (_, k) => got[k] ? `<span>${esc(got[k])}</span>` : `<span class="empty">?</span>`).join("")}</div></div><div class="list" style="margin-top:10px">`;
+    clues.forEach((c, k) => {
+      h += isDone(k) ? `<div class="item"><p class="eyebrow">Hinweis ${k + 1} · ${label(k)}</p><p class="de">${esc(fill(c.de))}</p><p class="en">${esc(fill(c.en))}</p></div>`
+        : `<div class="item locked"><p class="eyebrow">Hinweis ${k + 1}</p><p class="de">Noch versteckt in ${label(k) === "Prolog" ? "dem Prolog" : label(k)}</p></div>`;
+    });
+    h += `</div>`;
+  } else if (ui.boxTab === "words") {
+    const groups = STAGES.map((st, k) => isDone(k) ? `<div class="wgroup"><h3>${label(k)} · ${esc(st.title)}</h3>${st.words.map(([de, en]) => `<div class="word"><button data-action="say" data-say="${esc(de)}" aria-label="${esc(de)} anhören">${icon("i-speaker", "ico")}</button><div><b>${esc(de)}</b><span>${esc(en)}</span></div></div>`).join("")}</div>` : "").join("");
+    h += groups ? `<div class="actions" style="margin:0 0 14px"><button class="btn soft" data-action="drill-words">${icon("i-cards")}Wörter üben</button></div>${groups}` : `<p class="empty-state">Open your first letter and its words will appear here, ready for revision.</p>`;
+  } else if (ui.boxTab === "cheat") {
+    h += `<p class="sub" style="margin-bottom:12px">Tap a card to open it. The essentials for A1 on one page.</p>
+    <div class="cheat">${CHEAT.map(c => `<details class="tip"><summary><span class="tip-ico">${icon("i-bulb")}</span>${esc(c.t)}</summary><div class="cb">${fill(c.h)}</div></details>`).join("")}</div>`;
+  } else if (ui.boxTab === "secrets") {
+    const hints = { cat: "Eine Katze schläft irgendwo auf dem Baum…", cloud: "Manche Wolken sind kitzlig. Tipp, tipp, tipp…", golden: "Manchmal fliegt ein goldenes Blütenblatt vorbei…" };
+    h += `<div class="list">${["cat", "cloud", "golden"].map(k => {
+      const s = CONFIG.secrets[k];
+      return state.secrets.includes(k) ? `<div class="item"><p class="eyebrow">${icon("i-spark")} ${esc(s.title)}</p><p class="en" style="font-style:normal;color:var(--ink);font-size:.98rem">${esc(fill(s.text))}</p></div>`
+        : `<div class="item locked"><p class="eyebrow">Geheimnis</p><p class="de">${esc(hints[k])}</p></div>`;
+    }).join("")}</div>`;
+  } else {
+    h += `<p class="sub" style="margin-bottom:12px">Goethe-Zertifikat A1: Start Deutsch 1. Written part first, then speaking in a small group. 100 points in total, and you pass with 60.</p>
+    <div style="overflow-x:auto"><table class="exam-table"><tr><th>Teil</th><th>Zeit</th><th>Was?</th></tr>
+      <tr><td>Hören</td><td>ca. 20 Min.</td><td>3 Teile, 15 Aufgaben: dialogues, announcements, phone messages</td></tr>
+      <tr><td>Lesen</td><td>ca. 25 Min.</td><td>3 Teile, 15 Aufgaben: emails, websites, signs</td></tr>
+      <tr><td>Schreiben</td><td>ca. 20 Min.</td><td>Fill in a form + write about 30 words</td></tr>
+      <tr><td>Sprechen</td><td>ca. 15 Min.</td><td>Introduce yourself, ask and answer, make requests</td></tr></table></div>
+    <div class="list" style="margin-top:14px">${STAGES.map(st => `<div class="item"><p class="eyebrow">${st.part}</p><p class="en" style="font-style:normal;color:var(--ink);font-size:.95rem">${esc(st.tip)}</p></div>`).join("")}</div>
+    <p class="eyebrow" style="margin-top:22px">Echte Prüfungen üben</p>
+    <p class="sub">Goethe publishes free sample tests. Try one when you've finished the letters. It's the closest thing to the real exam.</p>
+    <div class="links">
+      <a href="https://www.goethe.de/pro/relaunch/prf/materialien/A1_sd1/sd_1_modellsatz.pdf" target="_blank" rel="noopener">Modellsatz<span>goethe.de · PDF</span></a>
+      <a href="https://www.goethe.de/pro/relaunch/prf/materialien/A1_sd1/sd_1_uebungssatz01.pdf" target="_blank" rel="noopener">Übungssatz 1<span>goethe.de · PDF</span></a>
+      <a href="https://www.goethe.de/pro/relaunch/prf/materialien/A1_sd1/sd_1_uebungssatz02.pdf" target="_blank" rel="noopener">Übungssatz 2<span>goethe.de · PDF</span></a>
+      <a href="https://bfu.goethe.de/a1_sd1/hoeren.php" target="_blank" rel="noopener">Hören online, mit Audio<span>bfu.goethe.de</span></a>
+    </div>`;
+  }
+  return h;
+}
+
+/* ---------- Practice ---------- */
+function renderPractice() {
+  const missedN = missedList().length, pool = STAGES.reduce((a, s, k) => a + (isDone(k) ? s.words.length : 0), 0);
+  const card = (action, ico, title, sub, cls = "") => `<button class="pcard ${cls}" data-action="${action}"><span class="pi">${ico}</span><span class="pt"><b>${title}</b><span>${sub}</span></span></button>`;
+  return `<div class="stage-top"><button class="icon-btn" data-action="map" aria-label="Zurück zum Baum">${icon("i-back")}</button><div class="meta"><b>Üben</b><span>Zwischendurch, ohne Briefe</span></div></div>
+  <h1 class="h1">Zeit zum <em>Üben</em></h1>
+  <p class="sub">Short rounds with fresh questions every time. Mistakes are welcome: that's how it sticks.</p>
+  <div class="list" style="margin-top:16px">
+    ${card("drill-mistakes", icon("i-redo"), "Fehler-Heft", missedN ? `${missedN} ${missedN === 1 ? "Aufgabe" : "Aufgaben"} zum Wiederholen` : "Keine offenen Fehler. Toll!", missedN ? "alert" : "")}
+    ${card("drill-words", icon("i-cards"), "Wörter-Quiz", pool ? `Wörter aus deinen Briefen · ${pool} gesammelt` : "Öffne zuerst einen Brief")}
+    ${card("drill-numbers", "123", "Zahlen &amp; Zeiten hören", "Zahlen, Preise, Uhrzeiten, Telefonnummern")}
+    ${card("drill-spell", "ABC", "Buchstabieren hören", "Namen und Städte, Buchstabe für Buchstabe")}
+    ${card("cheat", icon("i-book"), "Spickzettel", "Grammatik und Redemittel für A1")}
+  </div>`;
+}
+function renderTypedQ(q) {
+  const st = ui.answered ? (ui.lastOk ? "ok" : "bad") : "";
+  let h = `<p class="prompt">${esc(q.prompt)}</p>${q.sub ? `<p class="prompt-sub">${esc(q.sub)}</p>` : ""}
+  <form class="field-row" data-form="typed">
+    <label class="sr" for="typedAns">Antwort</label>
+    <input class="txt ${st}" id="typedAns" value="${esc(ui.typedVal || "")}" inputmode="${q.mode || "text"}" autocomplete="off" autocapitalize="off" spellcheck="false" ${ui.answered ? "disabled" : ""}>
+    ${ui.answered ? "" : `<button class="btn" type="submit">Prüfen</button>`}
+  </form>`;
+  if (ui.answered) h += feedbackHTML(ui.lastOk, q.explain, `<p class="fb-explain"><b>Lösung:</b> ${esc(q.show)}</p>`);
+  return h;
+}
+function renderDrill() {
+  const d = ui.drill;
+  if (d.done) return renderDrillDone(d);
+  const q = curQ(), total = d.items.length;
+  let h = `<div class="stage-top">
+    <button class="icon-btn" data-action="practice" aria-label="Zurück zu Üben">${icon("i-back")}</button>
+    <div class="meta"><b>${esc(d.title)}</b><span>Aufgabe ${d.pos + 1} von ${total}</span></div>
+  </div>
+  <div class="qdots" aria-hidden="true">${d.items.map((_, k) => `<i class="${k < d.pos || (k === d.pos && ui.answered) ? "on" : k === d.pos ? "now" : ""}"></i>`).join("")}</div>
+  <section class="qcard card">`;
+  if (q.ctx) h += renderCtx(q.ctx);
+  if (q.audio) h += renderAudio(q, activeStage());
+  h += q.type === "typed" ? renderTypedQ(q) : renderChoiceQ(q, d.seed + d.pos);
+  return h + `</section>`;
+}
+function renderDrillDone(d) {
+  const total = d.items.length, r = d.right, left = missedList().length, again = !(d.kind === "mistakes" && !left);
+  return `<section class="reward">
+    <div class="bloom">${flower(true)}</div>
+    <p class="eyebrow">${esc(d.title)} · geschafft</p>
+    <h1 class="h1">${r === total ? "Perfekt!" : r >= total * .6 ? "Sehr gut!" : "Weiter so!"}</h1>
+    <p class="score">${r} von ${total} richtig${r ? ` · +${r} Blütenblätter` : ""}</p>
+    ${d.kind === "mistakes" ? `<p class="sub" style="margin-top:8px">${left ? `${left} ${left === 1 ? "Aufgabe bleibt" : "Aufgaben bleiben"} im Fehler-Heft.` : "Dein Fehler-Heft ist leer. Toll!"}</p>` : ""}
+    <p class="encourage">${r === total ? "Du schaffst das!" : "Fehler sind Freunde."}<span>${r === total ? "You've got this!" : "Mistakes are how your brain learns."}</span></p>
+    <div class="actions">${again ? `<button class="btn wide" data-action="drill-again">Nochmal</button>` : ""}<button class="btn soft" data-action="practice">Zurück zu Üben</button></div>
+  </section>`;
+}
+
+/* =====================================================================
+   Sheets, toasts, bursts
+   ===================================================================== */
+let lastFocus = null;
+function openSheet(html) {
+  closeSheet();
+  lastFocus = document.activeElement;
+  const w = document.createElement("div");
+  w.className = "sheet-wrap"; w.id = "sheet";
+  w.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" tabindex="-1"><button class="icon-btn close" data-action="close-sheet" aria-label="Schließen">${icon("i-close")}</button>${html}</div>`;
+  w.addEventListener("click", e => { if (e.target === w) closeSheet(); });
+  document.body.appendChild(w);
+  w.querySelector(".sheet").focus();
+}
+function closeSheet() { const s = $("#sheet"); if (s) { s.remove(); if (lastFocus && lastFocus.focus) try { lastFocus.focus(); } catch (e) {} } }
+let toastT = null;
+function toast(msg, ms = 2800) {
+  let t = $("#toast");
+  if (!t) { t = document.createElement("div"); t.id = "toast"; t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+  t.textContent = msg; t.hidden = false;
+  clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, ms);
+}
+const BURST_COLORS = ["#F7A9C0", "#FBC9D7", "#FFD0B8", "#F59AB5", "#FFE3EA"];
+function burst(x, y, n = 14, gold = false) {
+  if (reduceMotion) return;
+  for (let k = 0; k < n; k++) {
+    const el = document.createElement("span");
+    el.className = "bp";
+    el.innerHTML = petalSVG(gold && k % 3 === 0 ? "#F2C766" : pick(BURST_COLORS));
+    el.style.left = x + "px"; el.style.top = y + "px";
+    document.body.appendChild(el);
+    const a = Math.random() * Math.PI * 2, dist = 50 + Math.random() * 100;
+    const dx = Math.cos(a) * dist, dy = Math.sin(a) * dist - 40;
+    try {
+      el.animate([
+        { transform: "translate(-50%,-50%) rotate(0deg) scale(.5)", opacity: 1 },
+        { transform: `translate(calc(-50% + ${dx.toFixed(0)}px), calc(-50% + ${(dy + 80).toFixed(0)}px)) rotate(${((Math.random() - .5) * 600).toFixed(0)}deg) scale(1)`, opacity: 0 }
+      ], { duration: 1000 + Math.random() * 700, easing: "cubic-bezier(.2,.7,.3,1)" }).onfinish = () => el.remove();
+    } catch (e) { el.remove(); }
+  }
+}
+function burstFrom(el, n, gold) { if (!el) return; const r = el.getBoundingClientRect(); burst(r.left + r.width / 2, r.top + r.height / 2, n, gold); }
+
+/* =====================================================================
+   Game flow
+   ===================================================================== */
+function openStage(i) {
+  if (!unlocked(i)) { toast(`Dieser Brief ist noch zu. Open ${label(i - 1)} first.`); return; }
+  const st = STAGES[i], resume = state.cur && state.cur.stage === i;
+  if (resume && state.cur.qi >= st.questions.length) {   // she answered the last question and left before opening the letter: finish it now
+    TTS.stop(); closeSheet();
+    Object.assign(ui, { screen: "stage", stage: i, qi: st.questions.length - 1, correct: state.cur.correct, reward: null });
+    return completeStage();
+  }
+  go("stage", { stage: i, phase: resume ? "q" : "intro", qi: resume ? state.cur.qi : 0, correct: resume ? state.cur.correct : 0, answered: false, picked: null, plays: 0, showT: false, showEn: false, form: {}, formChecked: false, writeChecked: false, pts: [], reward: null });
+}
+function startQuestions() {
+  state.cur = { stage: ui.stage, qi: 0, correct: 0 }; save();
+  Object.assign(ui, { phase: "q", qi: 0, correct: 0, answered: false, picked: null, plays: 0, showT: false, pts: [] });
+  render();
+}
+function answer(ok, gain) {
+  ui.answered = true; ui.lastOk = ok;
+  ui.fbWord = ok ? pick(OK_WORDS) : pick(BAD_WORDS);
+  if (inDrill()) {
+    const it = curItem();
+    if (ok) { ui.drill.right++; state.petals++; }
+    if (it.ref) { if (ok) delete state.missed[it.ref]; else state.missed[it.ref] = 1; }   // wrong ones stay in the notebook until she gets them right
+  } else {
+    ui.correct += gain;
+    state.petals += gain;
+    state.cur = { stage: ui.stage, qi: ui.qi + 1, correct: ui.correct };
+    if (/^(tf|mc)$/.test(curQ().type)) { if (ok) delete state.missed[ui.stage + ":" + ui.qi]; else state.missed[ui.stage + ":" + ui.qi] = 1; }
+  }
+  save();
+  const y = window.scrollY;
+  render({ keepScroll: true });
+  window.scrollTo(0, y);
+  const fb = $("#fb");
+  if (fb) { try { fb.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" }); } catch (e) {} }
+  const nb = $("#nextBtn"); if (nb) try { nb.focus({ preventScroll: true }); } catch (e) {}
+}
+function nextQuestion() {
+  TTS.stop();
+  if (inDrill()) {
+    const d = ui.drill;
+    d.pos++;
+    if (d.pos >= d.items.length) { d.done = true; render(); setTimeout(() => burst(window.innerWidth / 2, 150, 26), 250); return; }
+    Object.assign(ui, { qi: d.pos, answered: false, picked: null, plays: 0, showT: false, fbWord: null, typedVal: "" });
+    return render();
+  }
+  const st = STAGES[ui.stage];
+  if (ui.qi + 1 >= st.questions.length) return completeStage();
+  Object.assign(ui, { qi: ui.qi + 1, answered: false, picked: null, plays: 0, showT: false, fbWord: null });
+  render();
+}
+function startDrill(kind, title, items) {
+  go("drill", { drill: { kind, title, items, pos: 0, right: 0, done: false, seed: rnd(100, 9999) }, qi: 0, answered: false, picked: null, plays: 0, showT: false, fbWord: null, typedVal: "" });
+}
+function completeStage() {
+  const i = ui.stage, st = STAGES[i], total = stageTotal(st), correct = Math.min(ui.correct, total);
+  const ratio = correct / total, stars = ratio >= .9 ? 3 : ratio >= .6 ? 2 : 1;
+  const firstTime = !isDone(i);
+  const prev = state.done[i];
+  const bonus = stars === 3 && (!prev || prev.stars < 3) ? 3 : 0;
+  state.petals += bonus;
+  if (!prev || stars >= prev.stars) state.done[i] = { stars, correct, total };
+  state.cur = null;
+  save();
+  ui.reward = { stars, correct, total, gained: correct + bonus, firstTime };
+  ui.phase = "reward"; ui.showEn = false;
+  render();
+  setTimeout(() => burst(window.innerWidth / 2, 150, 26), 250);
+}
+function revealSecret(id) {
+  const s = CONFIG.secrets[id]; if (!s) return;
+  const fresh = !state.secrets.includes(id);
+  if (fresh) { state.secrets.push(id); state.petals += 5; save(); updateHud(); }
+  openSheet(`<span class="secret-badge">${icon("i-spark")} Geheimnis ${state.secrets.indexOf(id) + 1} von 3${fresh ? " · +5 Blüten" : ""}</span><h2>${esc(s.title)}</h2><p>${esc(fill(s.text))}</p><div class="actions"><button class="btn wide" data-action="close-sheet">Psst. Weiter.</button></div>`);
+}
+
+/* =====================================================================
+   Events
+   ===================================================================== */
+const actions = {
+  home: () => go("title"),
+  start: () => openStage(0),
+  map: () => { closeSheet(); go("map"); },
+  how: () => openSheet(`<h2>So geht's</h2>
+    <ul>
+      <li>Every letter is locked with a short German challenge using real <b>Start Deutsch 1</b> task types: Hören, Lesen, Schreiben, Sprechen.</li>
+      <li>Each one takes about 3 minutes. Open one, then go back to your books.</li>
+      <li>Every lock you open gives you a clue. Collect all eleven to find out who wrote the letters.</li>
+      <li>Your progress saves on this phone automatically, so you can close it any time.</li>
+      <li>Listening tasks use your phone's German voice, so turn the sound on. No sound? You can read the text instead.</li>
+      <li>The treasure box has a <b>Spickzettel</b> (grammar cheat sheet). <b>Üben</b> gives you quick rounds of words, numbers and spelling, and keeps the questions you got wrong so you can try them again.</li>
+      <li>Psst: three little secrets are hidden somewhere.</li>
+    </ul>
+    <div class="actions"><button class="btn wide" data-action="${countDone() || state.cur ? "map" : "start"}">Verstanden</button></div>`),
+  settings: () => openSheet(settingsHTML()),
+  "close-sheet": () => closeSheet(),
+  box: () => { closeSheet(); if (ui.screen !== "box") ui.prev = { screen: ui.screen }; go("box"); },
+  "back-from-box": () => { const p = ui.prev && ui.prev.screen; go(p && p !== "box" ? p : "map"); },
+  tab: el => { ui.boxTab = el.dataset.tab; render({ keepScroll: true }); },
+  "open-stage": el => openStage(+el.dataset.i),
+  "open-finale": () => {
+    if (!allDone()) { toast("Collect all eleven clues first. Der letzte Brief ist noch zu."); return; }
+    ui.fin = { slots: [], tries: 0, opening: false };
+    go("finale");
+  },
+  "open-envelope": el => {
+    if (el.classList.contains("open")) return;
+    el.classList.add("open");
+    burstFrom(el, 10);
+    setTimeout(() => { if (ui.screen === "stage" && ui.phase === "intro") { ui.phase = "letter"; render(); } }, reduceMotion ? 50 : 1150);
+  },
+  "toggle-en": () => { ui.showEn = !ui.showEn; render({ keepScroll: true }); },
+  "start-q": () => startQuestions(),
+  pick: el => {
+    if (ui.answered) return;
+    const q = curQ(), v = +el.dataset.v;
+    ui.picked = v;
+    const ok = q.type === "tf" ? (v === 1) === q.answer : v === q.answer;
+    if (ok) burstFrom(el, 12);
+    answer(ok, ok ? 1 : 0);
+  },
+  "next-q": () => nextQuestion(),
+  practice: () => go("practice"),
+  cheat: () => { ui.prev = { screen: ui.screen }; go("box", { boxTab: "cheat" }); },
+  "drill-words": () => { const items = vocabItems(8); if (!items.length) return toast("Öffne zuerst einen Brief. Its words will show up here."); startDrill("words", "Wörter-Quiz", items); },
+  "drill-numbers": () => startDrill("numbers", "Zahlen & Zeiten", numberItems()),
+  "drill-spell": () => startDrill("spell", "Buchstabieren", spellItems(5)),
+  "drill-mistakes": el => { const only = el.dataset.stage, items = mistakeItems(only === undefined ? null : +only, 8); if (!items.length) return toast("Keine offenen Fehler. Toll!"); startDrill("mistakes", "Fehler-Heft", items); },
+  "drill-again": () => actions[{ words: "drill-words", numbers: "drill-numbers", spell: "drill-spell", mistakes: "drill-mistakes" }[ui.drill.kind]]({ dataset: {} }),
+  play: () => {
+    const q = curQ(), st = activeStage(), limit = st && (st.plays || 2);
+    if (state.settings.strict && limit && ui.plays >= limit) { toast(`In der Prüfung hörst du nur ${limit}×. Der Prüfungsmodus ist an.`); return; }
+    const btn = $("#playBtn");
+    const started = TTS.speak(q.audio, {
+      gap: q.gap,
+      onStart: () => { btn && btn.classList.add("playing"); },
+      onEnd: okp => { const b = $("#playBtn"); if (b) b.classList.remove("playing"); if (okp === false && !ui.showT) { toast("No sound? Tap „Kein Ton? Text lesen“."); } }
+    });
+    if (started) { ui.plays++; const pc = $("#playCount"); if (pc) pc.textContent = ui.plays + "× gehört"; const l = btn && btn.lastElementChild; if (l) l.textContent = "Nochmal hören"; }
+    else { ui.showT = true; render({ keepScroll: true }); }
+  },
+  "show-transcript": () => { ui.showT = !ui.showT; render({ keepScroll: true }); },
+  "check-form": () => {
+    const q = STAGES[ui.stage].questions[ui.qi];
+    ui.formChecked = true;
+    const n = q.fields.filter(f => !f.given && f.test((ui.form[f.id] || "").trim())).length;
+    ui.picked = n;
+    answer(n >= 4, n);
+  },
+  "check-write": () => {
+    const t = state.draft || "";
+    ui.writeChecked = true;
+    const n = WRITE_CHECKS.filter(c => c[2](t)).length;
+    answer(n >= 3, n);
+  },
+  "copy-letter": el => {
+    const t = state.draft || "";
+    const fallback = () => { const ta = $("#letterTxt"); if (ta) { ta.removeAttribute("readonly"); ta.focus(); ta.select(); } toast("Text selected. Copy it from here."); };
+    try {
+      navigator.clipboard.writeText(t).then(() => toast("Kopiert! Copied."), fallback);
+    } catch (e) { fallback(); }
+  },
+  pause: () => go("pause"),
+  "secret-cat": () => revealSecret("cat"),
+  cloud: el => {
+    ui.cloudTaps++;
+    el.animate && !reduceMotion && el.animate([{ transform: "scale(1)" }, { transform: "scale(1.15)" }, { transform: "scale(1)" }], { duration: 280 });
+    if (ui.cloudTaps >= 3) { ui.cloudTaps = 0; revealSecret("cloud"); }
+  },
+  "secret-golden": el => { burstFrom(el, 18, true); el.remove(); revealSecret("golden"); },
+  petal: el => {
+    const k = +el.dataset.k, L = nameLetters().length;
+    const slots = ui.fin.slots;
+    const empty = Array.from({ length: L }, (_, i) => i).find(i => slots[i] == null);
+    if (empty == null) return;
+    slots[empty] = k;
+    render({ keepScroll: true });
+    if (Array.from({ length: L }, (_, i) => slots[i]).every(v => v != null)) checkName();
+  },
+  slot: el => { const k = +el.dataset.k; if (ui.fin.slots[k] != null) { ui.fin.slots[k] = null; render({ keepScroll: true }); } },
+  say: el => { if (!TTS.speak([["f", el.dataset.say]])) toast("This browser can't play speech."); },
+  "toggle-breaks": el => { state.settings.breaks = el.checked; save(); },
+  "toggle-strict": el => { state.settings.strict = el.checked; save(); },
+  rate: el => { state.settings.rate = +el.dataset.rate; save(); openSheet(settingsHTML()); },
+  "test-voice": () => { if (!TTS.speak([["f", "Hallo " + (herName() || "du") + "! Viel Erfolg beim Deutschlernen."]])) toast("This browser can't play speech."); },
+  "reset-ask": () => { const b = $("#resetBox"); if (b) b.innerHTML = `<p style="margin:0 0 8px"><b>Wirklich alles löschen?</b> All letters, petals and secrets will be gone.</p><div class="actions" style="margin-top:0"><button class="btn" data-action="reset-yes">Ja, neu anfangen</button><button class="btn soft" data-action="reset-no">Nein</button></div>`; },
+  "reset-no": () => openSheet(settingsHTML()),
+  "reset-yes": () => { state = defaults(); save(); closeSheet(); ui.fin = { slots: [], tries: 0, opening: false }; go("title"); toast("Alles zurückgesetzt."); }
+};
+function checkName() {
+  const L = nameLetters(), s = scrambled();
+  const guess = ui.fin.slots.map(k => s[k]).join("");
+  const box = $("#slots"), msg = $("#finMsg");
+  if (guess === L.join("")) {
+    box && box.classList.add("win");
+    if (msg) { msg.className = "fin-msg"; msg.textContent = "Richtig!"; }
+    state.finale = true; save();
+    ui.fin.opening = true;
+    burst(window.innerWidth / 2, window.innerHeight / 2, 40, true);
+    setTimeout(() => { ui.fin.opening = false; render(); setTimeout(() => burst(window.innerWidth / 2, 120, 34), 200); }, reduceMotion ? 300 : 1300);
+  } else {
+    ui.fin.tries++;
+    if (box) { box.classList.remove("shake"); void box.offsetWidth; box.classList.add("shake"); }
+    setTimeout(() => {
+      ui.fin.slots = [];
+      render({ keepScroll: true });
+      const m = $("#finMsg");
+      if (m) { m.className = "fin-msg bad"; m.textContent = "Fast! Lies die Hinweise noch einmal. · Almost, read the clues again."; }
+    }, 600);
+  }
+}
+function settingsHTML() {
+  const voice = !TTS.ok ? "This browser can't play speech, so listening tasks show the text." : TTS.de.length ? `German voice: ${esc(TTS.f ? TTS.f.name : TTS.de[0].name)}` : "No German voice found, so it may sound English. Android: open Settings, search for “Text-to-speech”, then Google, Install voice data, Deutsch. iPhones have German built in. The text is always available.";
+  return `<h2>Einstellungen</h2>
+    <div class="setting"><div><b>Pausen-Erinnerung</b><span>A gentle nudge after 15 minutes of playing.</span></div>
+      <label class="switch"><input type="checkbox" data-change="toggle-breaks" ${state.settings.breaks ? "checked" : ""} aria-label="Pausen-Erinnerung"><i></i></label></div>
+    <div class="setting"><div><b>Prüfungsmodus</b><span>Listening plays only as often as in the real exam.</span></div>
+      <label class="switch"><input type="checkbox" data-change="toggle-strict" ${state.settings.strict ? "checked" : ""} aria-label="Prüfungsmodus"><i></i></label></div>
+    <div class="setting"><div><b>Sprechtempo</b><span>Slower is easier to follow.</span></div>
+      <div class="seg"><button data-action="rate" data-rate="0.75" aria-pressed="${state.settings.rate < 0.85}">Langsam</button><button data-action="rate" data-rate="0.9" aria-pressed="${state.settings.rate >= 0.85}">Normal</button></div></div>
+    <div class="setting"><div><b>Stimme testen</b><span>Check your sound before the listening letters.</span></div><button class="btn soft" data-action="test-voice">${icon("i-speaker")}Test</button></div>
+    <p class="fineprint">${voice}</p>
+    <div class="setting" id="resetBox"><div><b class="danger">Neu anfangen</b><span>Delete all progress on this phone.</span></div><button class="btn soft" data-action="reset-ask">Löschen</button></div>`;
+}
+
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-action]");
+  if (!el) return;
+  const a = actions[el.dataset.action];
+  if (!a) return;
+  if (el.getAttribute("aria-disabled") === "true") {
+    if (el.dataset.action === "open-stage") toast("Dieser Brief ist noch verschlossen. Open the one before it first.");
+    else toast("Collect all eleven clues first. Der letzte Brief ist noch zu.");
+    return;
+  }
+  e.preventDefault();
+  a(el, e);
+});
+document.addEventListener("change", e => {
+  const el = e.target;
+  if (el.dataset && el.dataset.change && actions[el.dataset.change]) actions[el.dataset.change](el);
+  if (el.dataset && el.dataset.field && el.type === "radio") ui.form[el.dataset.field] = el.value;
+  if (el.dataset && el.dataset.pt !== undefined) ui.pts[+el.dataset.pt] = el.checked;
+});
+let draftT = null;
+document.addEventListener("input", e => {
+  const el = e.target;
+  if (el.dataset && el.dataset.field && el.type !== "radio") ui.form[el.dataset.field] = el.value;
+  if (el.id === "letterTxt") {
+    const t = el.value;
+    state.draft = t;
+    clearTimeout(draftT); draftT = setTimeout(save, 400);
+    const wc = $("#wcNum"); if (wc) wc.textContent = wordCount(t) + " Wörter";
+    const ch = $("#checks"); if (ch) ch.innerHTML = checksHTML(t);
+    const b = $("#writeBtn"); if (b) b.disabled = wordCount(t) < 8;
+  }
+});
+document.addEventListener("submit", e => {
+  const f = e.target;
+  if (f.dataset.form === "typed") {
+    e.preventDefault();
+    const tv = ($("#typedAns").value || "").trim();
+    if (!tv || ui.answered) return;
+    ui.typedVal = tv;
+    const ok = curQ().check(tv);
+    if (ok) burstFrom($("#typedAns"), 12);
+    return answer(ok, ok ? 1 : 0);
+  }
+  if (f.dataset.form !== "name") return;
+  e.preventDefault();
+  const v = ($("#herName").value || "").trim().replace(/\s+/g, " ").slice(0, 24).replace(/(^|[\s-])(\p{L})/gu, (m, a, b) => a + b.toLocaleUpperCase("de-DE"));
+  if (!v) { $("#nameErr").hidden = false; return; }
+  state.herName = v;
+  ui.fbWord = ["Freut mich, " + v + "!", "Nice to meet you!"];
+  ui.answered = true; ui.lastOk = true;
+  ui.correct += 1; state.petals += 1;
+  state.cur = { stage: ui.stage, qi: ui.qi + 1, correct: ui.correct };
+  save();
+  render({ keepScroll: true });
+  burstFrom($("#fb"), 12);
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheet(); });
+
+/* =====================================================================
+   Falling petals
+   ===================================================================== */
+(function petals() {
+  const cvs = $("#petals"); if (!cvs || !cvs.getContext) return;
+  const ctx = cvs.getContext("2d");
+  const colors = ["#F7B3C8", "#FBCAD7", "#FFD5C2", "#F59AB5", "#FFE1E8", "#FBC0A8"];
+  let W = 0, H = 0, ps = [], raf = 0, last = 0;
+  function resize() {
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    W = window.innerWidth; H = window.innerHeight;
+    cvs.width = Math.round(W * dpr); cvs.height = Math.round(H * dpr);
+    cvs.style.width = W + "px"; cvs.style.height = H + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const want = Math.round(Math.min(22, Math.max(10, W / 24)));
+    while (ps.length < want) ps.push(spawn({}, true));
+    ps.length = want;
+    if (reduceMotion) draw();
+  }
+  function spawn(p, initial) {
+    p.x = Math.random() * W; p.y = initial ? Math.random() * H : -20 - Math.random() * 40;
+    p.s = 8 + Math.random() * 9; p.vy = 18 + Math.random() * 26; p.vx = 6 + Math.random() * 14;
+    p.rot = Math.random() * 6.28; p.vr = (Math.random() - .5) * 1.2; p.flip = Math.random() * 6.28; p.vf = .6 + Math.random() * 1.6;
+    p.sw = Math.random() * 6.28; p.c = colors[Math.floor(Math.random() * colors.length)]; p.a = .5 + Math.random() * .4;
+    return p;
+  }
+  function petal(p) {
+    const s = p.s;
+    ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.scale(.25 + Math.abs(Math.cos(p.flip)) * .75, 1);
+    ctx.globalAlpha = p.a; ctx.fillStyle = p.c;
+    ctx.beginPath(); ctx.moveTo(0, s * .55);
+    ctx.bezierCurveTo(-s * .62, s * .2, -s * .58, -s * .5, -s * .2, -s * .62);
+    ctx.lineTo(0, -s * .44); ctx.lineTo(s * .2, -s * .62);
+    ctx.bezierCurveTo(s * .58, -s * .5, s * .62, s * .2, 0, s * .55);
+    ctx.fill(); ctx.restore();
+  }
+  function draw() { ctx.clearRect(0, 0, W, H); ps.forEach(petal); }
+  function tick(t) {
+    const dt = Math.min(.05, (t - (last || t)) / 1000); last = t;
+    for (const p of ps) {
+      p.y += p.vy * dt; p.x += (p.vx + Math.sin(t / 900 + p.sw) * 16) * dt;
+      p.rot += p.vr * dt; p.flip += p.vf * dt;
+      if (p.y > H + 30 || p.x > W + 30) spawn(p, false), p.x = Math.random() * W * .9 - 40;
+    }
+    draw();
+    raf = requestAnimationFrame(tick);
+  }
+  window.addEventListener("resize", resize);
+  resize();
+  if (!reduceMotion) {
+    raf = requestAnimationFrame(tick);
+    document.addEventListener("visibilitychange", () => { if (document.hidden) { cancelAnimationFrame(raf); raf = 0; } else if (!raf) { last = 0; raf = requestAnimationFrame(tick); } });
+  }
+})();
+
+/* golden petal: appears now and then on the title and tree screens */
+function scheduleGolden(delay) {
+  setTimeout(() => {
+    if (state.secrets.includes("golden")) return;
+    if (document.hidden || !["title", "map", "box"].includes(ui.screen) || $("#golden")) { scheduleGolden(15000); return; }
+    const b = document.createElement("button");
+    b.id = "golden"; b.className = "golden" + (reduceMotion ? " still" : "");
+    b.setAttribute("data-action", "secret-golden");
+    b.setAttribute("aria-label", "Ein goldenes Blütenblatt");
+    b.innerHTML = `<svg viewBox="-30 -46 60 50" aria-hidden="true"><path d="M0 0C-16-8-21-31-8-43L0-36 8-43C21-31 16-8 0 0Z" fill="url(#gGold)" stroke="#C98A1E" stroke-width="1.5"/></svg>`;
+    b.style.setProperty("--x0", (8 + Math.random() * 45) + "vw");
+    document.body.appendChild(b);
+    const done = () => { if (b.isConnected) b.remove(); scheduleGolden(55000 + Math.random() * 40000); };
+    if (reduceMotion) setTimeout(done, 9000); else b.addEventListener("animationend", done);
+  }, delay);
+}
+
+/* break reminder after 15 minutes of active play */
+let activeMs = 0, reminded = false;
+setInterval(() => {
+  if (document.hidden) return;
+  activeMs += 30000;
+  if (!reminded && state.settings.breaks && activeMs >= 15 * 60000 && ui.screen !== "title") {
+    reminded = true;
+    openSheet(`<h2>15 Minuten! Kleine Pause?</h2><p>You've been playing for 15 minutes. Stretch, drink a glass of water, and maybe go back to your notes for a bit. Your progress is saved.</p><div class="actions"><button class="btn" data-action="pause">Pause machen</button><button class="btn soft" data-action="close-sheet">Noch kurz weiter</button></div>`);
+  }
+}, 30000);
+
+/* redraw the branch when the layout changes */
+let roT = null;
+try { new ResizeObserver(() => { clearTimeout(roT); roT = setTimeout(() => { if (ui.screen === "map") drawBranch(); }, 60); }).observe(app); } catch (e) {}
+window.addEventListener("resize", () => { if (ui.screen === "map") drawBranch(); });
+
+/* =====================================================================
+   Boot
+   ===================================================================== */
+function start(data) {
+  try { if (data && data.ui) Object.assign(ui, data.ui); } catch (e) {}
+  TTS.init();
+  render();
+  scheduleGolden(30000 + Math.random() * 15000);
+}
+try { window.claude && window.claude.hot && window.claude.hot.snapshot && window.claude.hot.snapshot(() => ({ ui: JSON.parse(JSON.stringify(ui)) })); } catch (e) {}
+if (window.claude && window.claude.hot && window.claude.hot.ready) window.claude.hot.ready(start);
+else start((window.claude && window.claude.hot && window.claude.hot.data) || {});
+})();
+</script>
+
+
+</body></html>
